@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>HeatWave Gaming</title>
+	
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<script type="text/javascript" src="javascript/login.js"></script>
+</head>
+
+<body>
+	<div class="outer">
+		<!--Code for the header-->
+		<header>
+		<img src="./images/header.jpg" alt="header">
+		</header>
+		
+		<!--Code for the nav and the search bar-->
+		<nav>
+			<ul>
+				<!--Possibly make these drop down lists unless we dont have enough buttons-->
+				<!--Example of dropdown would be genre>fps>mmo>rpg etc
+				For price could be <20 <30 <30 etc make it easy to find cheap games
+				Poissbly add one for on sale and make like 3 games on sale-->
+				<li><a class="active" href="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/#">Home</a></li>
+				<li><a href="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/#">DROP DOWN LISTS</a></li>
+				<li><a href="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/#">GENRE</a></li>
+				<li><a href="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/#">PRICE</a></li>
+				<li><a href="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/#">HELP</a></li>
+				
+				<!--Code for the search bar-->
+				<form class="search" name="searchBar" onsubmit="return validate()" action="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/searchProduct.php" method="POST">
+					<label>Search: <input type="text" name="searchValue"> </label>
+					<input type="submit" name="Submit" value="Submit">
+				</form>
+			</ul>
+		</nav>
+		
+		<!-- Login system starts here -->
+			<form action="login.php" method="post" onsubmit=" return validateForm()">
+				<div>Username: <input type="text" name="username" id="usernamefield"/></div>
+				<div>Password: <input type="password" name="password" id="passwordfield"/></div>
+				<div><input type="submit" value="Login" name="Login" /></div>
+			</form>
+		<!-- Login system ends here -->
+		
+		<!--Code for the section that will contain the products-->
+		<section class="mainCont">
+			<div class="prodContainer"><p>CounterStrike: Global Offensive</p><p>$15.00</p><p>Competitive FPS with an E-Sports following</p><p>9</p><form name="addButton" action="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/" method="POST"><input type="submit" name="addToC" value="Add to Cart"></form></div><div class="prodContainer"><p>CounterStrike: Source</p><p>$20.00</p><p>Precursore to CS:GO, an FPS that still has a cult following</p><p>9</p><form name="addButton" action="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/" method="POST"><input type="submit" name="addToC" value="Add to Cart"></form></div><div class="prodContainer"><p>World of Warcraft 30 Day Sub</p><p>$15.00</p><p>The number one fantasy MMORPG created by Blizzard</p><p>9</p><form name="addButton" action="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/" method="POST"><input type="submit" name="addToC" value="Add to Cart"></form></div><div class="prodContainer"><p>Overwatch</p><p>$60.00</p><p>Team based shooter with a large number of characters to choose from</p><p>9</p><form name="addButton" action="http://ceto.murdoch.edu.au/~32674186/assignment2/testing/" method="POST"><input type="submit" name="addToC" value="Add to Cart"></form></div>		</section>
+		
+		<footer>
+			<p>Created by Lachlan + Mitchell</p>
+		</footer>
+	</div>
+</body>
+</html>
+
