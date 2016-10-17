@@ -20,7 +20,7 @@
 	// Check if data matches up
 	if(mysql_num_rows($queryresult)){
 		// Valid credentials 
-		$sessionid = rand(11111111111111111111, 99999999999999999999);
+		$sessionid = uniqid ('', true);
 		while($row=mysql_fetch_array($queryresult)){
 			//Process $row 
 		}
