@@ -31,6 +31,7 @@
 			$cookiename = "sessionID";
 			$cookievalue = $sessionid;
 			setcookie($cookiename, $cookievalue, time()+ (86400 * 7), "/");
+			echo $cookievalue;
 		} else {
 		}
 	} ELSE {

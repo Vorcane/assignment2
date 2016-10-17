@@ -35,10 +35,17 @@
 		</nav>
 		
 		<!-- Login system starts here -->
+			<div id="form-messages"></div>
 			<form action="login.php" method="post" onsubmit=" return validateForm()">
-				<div>Username: <input type="text" name="username" id="usernamefield"/></div>
-				<div>Password: <input type="password" name="password" id="passwordfield"/></div>
-				<div><input type="submit" value="Login" name="Login" /></div>
+				<div class="field">
+					Username: <input type="text" name="username" id="usernamefield"/>
+				</div>
+				<div class="field">
+					Password: <input type="password" name="password" id="passwordfield"/>
+				</div>
+				<div class="field">
+					<input type="submit" value="Login" name="Login" />
+				</div>
 			</form>
 		<!-- Login system ends here -->
 		
