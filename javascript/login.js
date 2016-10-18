@@ -14,12 +14,12 @@ function loginHandler(){
 	xhttp.open("GET", "login.php", true);
 	xhttp.setRequestHeader("
 	xhttp.send();*/
+    
+    var username = $('input#usernamefield').val();
+    var password = $('input#passwordfield').val();
+    alert(name);
+}
 
 }
 
     
-$('input#loginsubmit').on('click', function() {
-    var username = $('input#usernamefield').val();
-    var password = $('input#passwordfield').val();
-    alert(name);
-});

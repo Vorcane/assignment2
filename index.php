@@ -40,11 +40,11 @@
 		
 		<!-- Login system starts here -->
 			<div id="form-messages"></div>
-			<form action="login()" method="post" onsubmit=" return validateForm()">
+<!--			<form action="login()" method="post" onsubmit=" return validateForm()">-->
                 Username: <input type="text" name="username" id="usernamefield">
                 Password: <input type="password" name="password" id="passwordfield">
-                <input type="submit" value="Login" name="Login" id="login-submit">
-			</form>
+                <input type="submit" value="Login" name="Login" id="login-submit" onclick="loginHandler()">
+<!--			</form>-->
 		<!-- Login system ends here -->
 		
 		<!--Code for the section that will contain the products-->
