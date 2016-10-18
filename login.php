@@ -31,9 +31,9 @@
             $sessionid = uniqid ('', true); //Does do this
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
+            }
 		}
-        $testvar = $row['userID'];
-        echo "$testvar xDDD<br>"; //Doesnt get here
+        echo "$row xDDD<br>"; //Doesnt get here
         
 		//Updates the session ID field into the database for the user
         mysql_free_result($queryresult); //Clears leftover data from select query
