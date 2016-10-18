@@ -32,7 +32,7 @@
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
             }
-        echo $row['userID'] .  "xDDD<br>"; //Doesnt get here
+        echo $row["userID"] .  "xDDD<br>"; //Does get here but returns no result for userID
         
 		//Updates the session ID field into the database for the user
         mysql_free_result($queryresult); //Clears leftover data from select query
