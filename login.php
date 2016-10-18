@@ -19,7 +19,7 @@
     echo "test two <br>";
 
 	// Search database with form data
-	$searchquery = "SELECT userID FROM users WHERE userName = " . $enteredname . " AND password = " . $enteredpass . ";";
+	$searchquery = 'SELECT userID FROM users WHERE userName = "' . $enteredname . '" AND password = "' . $enteredpass . '";';
 	$queryresult = mysql_query($searchquery);
     echo "test three <br>";
     $testvar = mysql_num_rows($queryresult);
