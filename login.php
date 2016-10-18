@@ -32,7 +32,6 @@
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
             }
-		}
         echo "$row xDDD<br>"; //Doesnt get here
         
 		//Updates the session ID field into the database for the user
