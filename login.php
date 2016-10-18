@@ -23,7 +23,7 @@
 	$queryresult = mysql_query($searchquery);
     echo "test three";
     $testvar = mysql_num_rows($queryresult);
-    echo "$testvar"
+    echo "$testvar";
 	// Check if data matches up
 	if(mysql_num_rows($queryresult))
         { 
