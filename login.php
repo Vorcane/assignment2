@@ -23,7 +23,7 @@
 	$queryresult = mysql_query($searchquery);
     echo "test three <br>";
     $testvar = mysql_num_rows($queryresult);
-    echo "$testvar <br>";
+    echo "$testvar ayy lmao<br>";
 	// Check if data matches up
 	if(mysql_num_rows($queryresult))
         { 
@@ -33,7 +33,7 @@
                 //Process $row 
 		}
         $testvar = $row['userID'];
-        echo "$testvar <br>"; //Doesnt get here
+        echo "$testvar xDDD<br>"; //Doesnt get here
         
 		//Updates the session ID field into the database for the user
         mysql_free_result($queryresult); //Clears leftover data from select query
