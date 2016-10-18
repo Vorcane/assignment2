@@ -25,7 +25,7 @@
     $testvar = mysql_num_rows($queryresult);
     echo "$testvar ayy lmao<br>";
 	// Check if data matches up
-	if(mysql_num_rows($queryresult))
+	if(mysql_num_rows($queryresult)>0)
         { 
             // Valid credentials 
             $sessionid = uniqid ('', true); //Does do this
