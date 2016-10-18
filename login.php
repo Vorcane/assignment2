@@ -8,7 +8,7 @@
 	$dbname = "X32674186";
 
 	// Create Connection
-	$dbc = mysql_pconnect($host, $user, $password) or die("Can't connect" . mysql_error());;
+	$dbc = mysql_pconnect($host, $user, $password) or die("Can't connect" . mysql_error());
 	// Select database
 	mysql_select_db($dbname) or die("Couldn't select DB" . mysql_error());
 
@@ -19,7 +19,7 @@
 	// Search database with form data
 	$searchquery = "SELECT * FROM users WHERE userName = '" . $enteredname . "' AND password = '" . $enteredpass . "';";
 	$queryresult = mysql_query($searchquery);
-
+    echo mysql_num_rows($queryresult);
 	// Check if data matches up
 	if(mysql_num_rows($queryresult))
         { 
