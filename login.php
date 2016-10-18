@@ -37,7 +37,7 @@
         
 		//Updates the session ID field into the database for the user
         mysql_free_result($queryresult); //Clears leftover data from select query
-		$insertinto = 'UPDATE users SET sessionID = "' . $sessionid . '" WHERE userID = "' . $row['userID'] . '";'
+		$insertinto = 'UPDATE users SET sessionID = "' . $sessionid . '" WHERE userID = "' . $row['userID'] . '";';
 		$queryresult = mysql_query($insertinto);
         
         echo $queryresult;
