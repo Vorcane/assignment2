@@ -32,13 +32,13 @@
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
                 echo $row["userID"] . "This is a while loop <br>";
+                $insertinto = 'UPDATE users SET sessionID = "' . $sessionid . '" WHERE userID = "' . $row['userID'] . '";';
+		        $queryresult = mysql_query($insertinto);
             }
-        echo $row["userID"] .  "xDDD<br>"; //This works now
+       // echo $row["userID"] .  "xDDD<br>"; //This works now, no it doesnt the php LIES
         
 		//Updates the session ID field into the database for the user
-        mysql_free_result($queryresult); //Clears leftover data from select query
-		$insertinto = 'UPDATE users SET sessionID = "' . $sessionid . '" WHERE userID = "' . $row['userID'] . '";';
-		$queryresult = mysql_query($insertinto);
+        //mysql_free_result($queryresult); //Clears leftover data from select query DO I EVEN NEED THIS
         
         echo $queryresult . "This should be the query result";
 		
