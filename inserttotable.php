@@ -25,10 +25,10 @@
 		$retval = mysql_query($query, $dbc);
 		
 		if(! $retval ) {
-			die('Could not eneter data: ' . mysql_error());
+			die('Could not enter data: ' . mysql_error());
 		}
 		
-		echo "Enetered data success";
+		echo "Entered data success";
 		
 		# Closing connection
 		mysql_close($dbc);
