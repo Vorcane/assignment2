@@ -32,12 +32,14 @@
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
             }
-        echo "$row xDDD<br>"; //Doesnt get here
+        echo $row['userID'] .  "xDDD<br>"; //Doesnt get here
         
 		//Updates the session ID field into the database for the user
         mysql_free_result($queryresult); //Clears leftover data from select query
 		$insertinto = "UPDATE users SET sessionID = " . $sessionid . " WHERE userID = " . $row['userID'] . ";";
 		$queryresult = mysql_query($insertinto);
+        
+        echo $queryresult;
 		
         if(queryresult)
         { //Sets the cookie 
