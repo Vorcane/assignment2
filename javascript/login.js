@@ -1,4 +1,4 @@
-function validateForm(){
+function validateForm() {
 	var usernamefield = document.getElementById("usernamefield").value;
 	var passwordfield = document.getElementById("passwordfield").value;
 	if(!usernamefield || !passwordfield){
@@ -9,9 +9,17 @@ function validateForm(){
 	}
 }
 
-/*function login(){
-	var xhttp = new XMLHttpRequest();
+function loginHandler(){
+	/*var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "login.php", true);
 	xhttp.setRequestHeader("
-	xhttp.send();
-}*/
+	xhttp.send();*/
+
+}
+
+    
+$('input#loginsubmit').on('click', function() {
+    var username = $('input#usernamefield').val();
+    var password = $('input#passwordfield').val();
+    alert(name);
+});

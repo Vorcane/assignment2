@@ -36,7 +36,7 @@
 		        $updateresult = mysql_query($insertinto);
             }
         
-        echo $updateresult . "This should be the query result";
+        //echo $updateresult . "This should be the query result"; //Debugging code, pray you dont need this
 		
         if($updateresult)
         { //Sets the cookie 
