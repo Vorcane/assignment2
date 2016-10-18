@@ -31,7 +31,7 @@
             $sessionid = uniqid ('', true); //Does do this
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
-                echo $row["userID"];
+                echo $row["userID"] . "This is a while loop <br>";
             }
         echo $row["userID"] .  "xDDD<br>"; //This works now
         
@@ -40,7 +40,7 @@
 		$insertinto = 'UPDATE users SET sessionID = "' . $sessionid . '" WHERE userID = "' . $row['userID'] . '";';
 		$queryresult = mysql_query($insertinto);
         
-        echo $queryresult;
+        echo $queryresult . "This should be the query result";
 		
         if(queryresult)
         { //Sets the cookie 
