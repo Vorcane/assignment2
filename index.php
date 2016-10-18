@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="javascript/login.js"></script>
+    <script src="javascript/test.js"></script>
 
 </head>
 
@@ -39,7 +40,7 @@
 		
 		<!-- Login system starts here -->
 			<div id="form-messages"></div>
-			<!--<form action="login.php" method="post" onsubmit=" return validateForm()"> -->
+			<!--<form action="login.php" method="post" onsubmit=" return validateForm()">-->
                 Username: <input type="text" name="username" id="usernamefield">
                 Password: <input type="password" name="password" id="passwordfield">
                 <input type="submit" value="Login" name="Login" id="login-submit">
