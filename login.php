@@ -25,14 +25,14 @@
     $testvar = mysql_num_rows($queryresult);
     echo "$testvar ayy lmao<br>";
 	// Check if data matches up
-	if(mysql_num_rows($queryresult)>0)
+	if(mysql_num_rows($queryresult))
         { 
             // Valid credentials 
             $sessionid = uniqid ('', true); //Does do this
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
+                echo $row["userID"];
             }
-        //while ($row = myswl_fetch_)
         echo $row["userID"] .  "xDDD<br>"; //Does get here but returns no result for userID
         
 		//Updates the session ID field into the database for the user
