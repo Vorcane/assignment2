@@ -21,24 +21,28 @@
 	$queryresult = mysql_query($searchquery);
 
 	// Check if data matches up
-	if(mysql_num_rows($queryresult)){ 
-		// Valid credentials 
-		$sessionid = uniqid ('', true);
-		while($row=mysql_fetch_array($queryresult)){
-			//Process $row 
+	if(mysql_num_rows($queryresult))
+        { 
+            // Valid credentials 
+            $sessionid = uniqid ('', true); //Does do this
+            while($row=mysql_fetch_array($queryresult)){
+                //Process $row 
 		}
         
-        echo $row['userID'];
+        echo $row['userID']; //Doesnt get here
+        echo $row[1];
         
 		//Updates the session ID field into the database for the user
         mysql_free_result($queryresult); //Clears leftover data from select query
 		$insertinto = "UPDATE users SET sessionID = " . $sessionid . " WHERE userID = " . $row['userID'] . ";";
 		$queryresult = mysql_query($insertinto);
-		if(queryresult){ //Sets the cookie 
+		
+        if(queryresult)
+        { //Sets the cookie 
 			$cookiename = "sessionID";
 			$cookievalue = $sessionid;
 			setcookie($cookiename, $cookievalue, time()+ (86400 * 7), "/"); // Sets cookie with the id for expiry in a week
-			echo $cookievalue;
+			echo $cookievalue; //Gets here
             
 		} else {
             //Couldnt insert
