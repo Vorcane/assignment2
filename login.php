@@ -19,7 +19,7 @@
     echo "test two <br>";
 
 	// Search database with form data
-	$searchquery = "SELECT * FROM users WHERE userName = '" . $enteredname . "' AND password = '" . $enteredpass . "';";
+	$searchquery = "SELECT userID FROM users WHERE userName = " . $enteredname . " AND password = " . $enteredpass . ";";
 	$queryresult = mysql_query($searchquery);
     echo "test three <br>";
     $testvar = mysql_num_rows($queryresult);
@@ -32,6 +32,7 @@
             while($row=mysql_fetch_array($queryresult)){
                 //Process $row 
             }
+        //while ($row = myswl_fetch_)
         echo $row["userID"] .  "xDDD<br>"; //Does get here but returns no result for userID
         
 		//Updates the session ID field into the database for the user
