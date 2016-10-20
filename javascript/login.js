@@ -1,4 +1,5 @@
 $('input#login-submit').on('click', function() {
+    alert("test");
     var username = $('input#username').val();
     var password = $('input#password').val();
     alert(password);
