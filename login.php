@@ -1,7 +1,4 @@
 <?php 
-	//
-	// Database isnt saved perhaps doesnt close idk
-	//
 	$host = "localhost";
 	$user = "X32674186";
 	$password = "X32674186";
@@ -44,6 +41,7 @@
 			$cookievalue = $sessionid;
 			setcookie($cookiename, $cookievalue, time()+ (86400 * 7), "/"); // Sets cookie with the id for expiry in a week
 			//echo $cookievalue; //Gets here //Debugging code, pray you dont need this
+            echo "Your cookie is: $cookievalue";
             
 		} else {
             //Couldnt insert
