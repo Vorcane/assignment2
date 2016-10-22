@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <script src="checklogin()"></script>
+    <script checklogin()></script>
 	<div class="outer">
 		<!--Code for the header-->
 		<header>
@@ -44,7 +44,7 @@
                 Password: <input type="password" id="password">
                 <input type="submit" value="Login" id="login-submit">
                 <div id="login-data"></div>
-                <script src="login()"></script>
+                <script login()></script>
             </div>
 		<!-- Login system ends here -->
 		
