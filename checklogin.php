@@ -4,7 +4,6 @@
 	$password = "X32674186";
 	$dbname = "X32674186";
 
-    echo "Made it into the php file; ayy lmao";
 	// Create Connection
 	$dbc = mysql_pconnect($host, $user, $password) or die("Can't connect" . mysql_error());
 	// Select database
@@ -12,6 +11,7 @@
 
 	// Get data from form
 	$enteredid = trim($_POST["sessionID"]);
+    echo "$enteredid";
     // Search database with form data
 	$searchquery = 'SELECT * FROM users WHERE sessionID = "' . mysql_real_escape_string($enteredid) . '";';
 	$queryresult = mysql_query($searchquery);
