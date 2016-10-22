@@ -14,10 +14,8 @@ for(var i = 0; i <cookiearray.length; i++) {
             document.write(retdata[0]);
             if (retdata[0]==true) {
                 $('div#login-form').text("<h3>Welcome " + retdata[1] + "</h3>"); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
-            document.write("DO I GET HERE?!?!?!?");
             }
         })
-        document.write(cookie.substring(name.length+10,cookie.length)); //Returns the cookie value if found
         
     } else { //If cookie doesnt exist do this\
         
