@@ -11,10 +11,10 @@
 
 	// Get data from form
 	$enteredid = trim($_POST["sessionID"]);
-    echo "$enteredid";
     // Search database with form data
 	$searchquery = 'SELECT * FROM users WHERE sessionID = "' . mysql_real_escape_string($enteredid) . '";';
 	$queryresult = mysql_query($searchquery);
+    echo "$queryresult";
 	// Check if data matches up
 	if(mysql_num_rows($queryresult) !== 0)
         { 
