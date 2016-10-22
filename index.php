@@ -36,14 +36,13 @@
 			</ul>
 		</nav>
 		
-		<!-- Login system starts here -->
-<!--			<form action="login()" method="post" onsubmit=" return validateForm()">-->           <div id="login-form">
+		<!-- Login system starts here -->         
+            <div id="login-form">
                 Username: <input type="text" id="username">
                 Password: <input type="password" id="password">
                 <input type="submit" value="Login" id="login-submit">
                 <div id="login-data"></div>
                 <script src="javascript/login.js"></script>
-<!--			</form>-->
             </div>
 		<!-- Login system ends here -->
 		
