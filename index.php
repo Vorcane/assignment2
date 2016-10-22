@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <script src="javascript/checklogin.js"></script>
 	<div class="outer">
 		<!--Code for the header-->
 		<header>
@@ -84,7 +85,6 @@
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
 	</div>
-    <script src="javascript/checklogin.js"></script>
 </body>
 </html>
 
