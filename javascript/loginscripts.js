@@ -12,7 +12,7 @@ function checklogin() {
     
     $.post('checklogin.php', {sessionID: sessionID}, function (data) {
                     var retdata = data.split(';');
-                    $('div#login-form').html(retdata[0]);
+                    $('div#login-form').html(retdata[0] + "AND" + retdata[1]);
                     if (Number(retdata[0]) === 1) {
                         var outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie(\x22sessionID\x22)' type='button'>Log out</button>";
                         //$outputhtml = "Testing one two three";
