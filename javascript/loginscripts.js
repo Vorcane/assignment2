@@ -8,7 +8,12 @@ function deletecookie(name) {
 
 function checklogin() {
     "use strict";
-    var cookiename = "sessionID=",
+    var sessionID = Cookies.get('sessionID');
+    document.write(sessionID);
+    
+    
+    
+   /* var cookiename = "sessionID=",
         cookiearray = document.cookie.split(';'), //Splits the cookie into a sub array
         i = 0,
         sessionID,
@@ -25,7 +30,7 @@ function checklogin() {
                 //sends only value not the name of the cookie
                 //$('div#login-form').text("I got into the if statement"); // Gets here
                 sessionID = cookie.substring(name.length + 10, cookie.length);
-                document.write(sessionID);
+                //document.write(sessionID);
                 $.post('checklogin.php', {sessionID: sessionID}, function (data) {
                     //$('div#login-form').text("I got into the post statement"); Gets here
                     var retdata = data.split(';');
@@ -37,7 +42,7 @@ function checklogin() {
 
             }
         }
-    });
+    });*/
 }
 
 function login() {
