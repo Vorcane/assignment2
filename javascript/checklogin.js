@@ -5,8 +5,8 @@ for(var i = 0; i <cookiearray.length; i++) {
     while (cookie.charAt(0)==' ') { //Clears blank space from the value
         cookie = cookie.substring(1);
     }
-    if (c.indexOf(cookiename) == 0) { //If cookie exists do this
-        document.write(c.substring(name.length,c.length)); //Returns the cookie value if found
+    if (cookie.indexOf(cookiename) == 0) { //If cookie exists do this
+        document.write(cookie.substring(name.length,cookie.length)); //Returns the cookie value if found
         
     } else { //If cookie doesnt exist do this
         document.write("Cookie not found")
