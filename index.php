@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <!--<script checklogin()></script>-->
+    <script checklogin()></script>
 	<div class="outer">
 		<!--Code for the header-->
 		<header>
