@@ -12,7 +12,7 @@ for(var i = 0; i <cookiearray.length; i++) {
         $.post('checklogin.php', {sessionID: sessionID}, function(data) { 
             retdata = data.split(';');
             if (retdata[0]==true) {
-                $('div#login-form').text("<h3>Welcome " + retdata[1] + "</h3>"); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
+                $('div#login-form').html("<h3>Welcome " + retdata[1] + "</h3>"); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
             }
         })
         
