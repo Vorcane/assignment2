@@ -11,7 +11,7 @@
 
 	// Get data from form
 	$enteredid = trim($_POST["sessionID"]);
-    echo "$enteredid";
+    //echo "$enteredid";
     // Search database with form data
 	$searchquery = 'SELECT * FROM users WHERE sessionID = "' . mysql_real_escape_string($enteredid) . '";';
 	$queryresult = mysql_query($searchquery);
