@@ -1,19 +1,9 @@
 /*global $, checklogin*/
 /*jslint plusplus: true*/
-function login() {
+
+function deletecookie(name) {
     "use strict";
-    //$('input#login-submit').on('click', function () {
-        $('div#login-data').text("test");
-        var username = $('input#username').val(),
-            password = $('input#password').val();
-        
-        if (($.trim(username) !== '') && ($.trim(password) !== '')) {
-            $.post('login.php', {username: username, password: password}, function (data) {
-                $('div#login-data').text(data);
-            });
-            checklogin();
-        }
-    //});
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 function checklogin() {
@@ -46,7 +36,18 @@ function checklogin() {
     });
 }
 
-function deletecookie(name) {
+function login() {
     "use strict";
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    //$('input#login-submit').on('click', function () {
+        $('div#login-data').text("test");
+        var username = $('input#username').val(),
+            password = $('input#password').val();
+        
+        if (($.trim(username) !== '') && ($.trim(password) !== '')) {
+            $.post('login.php', {username: username, password: password}, function (data) {
+                $('div#login-data').text(data);
+            });
+            checklogin();
+        }
+    //});
 }
