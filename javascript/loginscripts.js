@@ -9,8 +9,16 @@ function deletecookie(name) {
 function checklogin() {
     "use strict";
     var sessionID = Cookies.get('sessionID');
-    document.write(sessionID);
     
+    $.post('checklogin.php', {sessionID: sessionID}, function (data) {
+                    var retdata = data.split(';');
+                    $('div#login-form').html(retdata[0]);
+                    if (retdata[0] === true) {
+                        $('div#login-form').html("<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie(\x22sessionID\x22)' type='button'>Log out</button>"); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
+                    }
+                });
+
+            }    
     
     
    /* var cookiename = "sessionID=",
