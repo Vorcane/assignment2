@@ -6,10 +6,11 @@ for(var i = 0; i <cookiearray.length; i++) {
         cookie = cookie.substring(1);
     }
     if (cookie.indexOf(cookiename) == 0) { //If cookie exists do this
-        document.write(cookie.substring(name.length,cookie.length)); //Returns the cookie value if found
+        $.post('checklogin.php', {sessionID: cookie.substring(name.length+11,cookie.length)}, function(data) { //sends only value not the name of the cookie
+            
+        })
+        document.write(cookie.substring(name.length+11,cookie.length)); //Returns the cookie value if found
         
     } else { //If cookie doesnt exist do this
-        var found = false;
     } 
 }
-if (found==false) {document.write("Cookie not found")}; //States if cookie is not found
