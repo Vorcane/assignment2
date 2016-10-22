@@ -11,7 +11,6 @@ for(var i = 0; i <cookiearray.length; i++) {
         var sessionID = cookie.substring(name.length+10,cookie.length);
         $.post('checklogin.php', {sessionID: sessionID}, function(data) { 
             retdata = data.split(';');
-            document.write(retdata[0]);
             if (retdata[0]==true) {
                 $('div#login-form').text("<h3>Welcome " + retdata[1] + "</h3>"); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
             }
