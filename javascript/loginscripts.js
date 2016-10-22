@@ -14,7 +14,8 @@ function checklogin() {
                     var retdata = data.split(';');
                     //$('div#login-form').html(retdata[0]);
                     if (retdata[0] === 1) {
-                        $outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie(\x22sessionID\x22)' type='button'>Log out</button>"
+                        $outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie(\x22sessionID\x22)' type='button'>Log out</button>";
+                        
                         $('div#login-form').html($outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
                     }
                 });    
