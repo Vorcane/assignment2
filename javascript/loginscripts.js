@@ -1,6 +1,7 @@
 /*global $, checklogin*/
 /*jslint plusplus: true*/
 function login() {
+    document.write("test two");
     "use strict";
     $('input#login-submit').on('click', function () {
         $('div#login-data').text("test");
