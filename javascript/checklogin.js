@@ -5,8 +5,10 @@ for(var i = 0; i <cookiearray.length; i++) {
     while (cookie.charAt(0)==' ') { //Clears blank space from the value
         cookie = cookie.substring(1);
     }
+    $('div#login-form').text("I got past the while statement");
     if (cookie.indexOf(cookiename) == 0) { //If cookie exists do this
         //sends only value not the name of the cookie
+        $('div#login-form').text("I got into the if statement");
         $.post('checklogin.php', {sessionID: cookie.substring(name.length+10,cookie.length)}, function(data) { 
             retdata = data.split(';');
             if (retdata[0]==true) {
