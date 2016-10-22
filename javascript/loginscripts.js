@@ -43,7 +43,7 @@ function checklogin() {
     });
 }
 
-function deletecookie() {
+function deletecookie(name) {
     var d = new Date();
-    document.cookie = name + " ;" + (d.getTime - 100) + ";path=/";    
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';    
 }
