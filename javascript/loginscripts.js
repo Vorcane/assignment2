@@ -1,9 +1,8 @@
 /*global $, checklogin*/
 /*jslint plusplus: true*/
 function login() {
-    document.write("test two");
     "use strict";
-    $('input#login-submit').on('click', function () {
+    //$('input#login-submit').on('click', function () {
         $('div#login-data').text("test");
         var username = $('input#username').val(),
             password = $('input#password').val();
@@ -14,7 +13,7 @@ function login() {
             });
             checklogin();
         }
-    });
+    //});
 }
 
 function checklogin() {
