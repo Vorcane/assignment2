@@ -30,7 +30,7 @@
                         $cookiename = "sessionID";
                         $cookievalue = $sessionid;
                         setcookie($cookiename, $cookievalue, time()+ (86400 * 7), "/"); // Sets cookie with the id for expiry in a week
-                        echo "Your cookie is: $cookievalue";
+                        //echo "Your cookie is: $cookievalue";
 
                     } else {
                         echo "Login failed, please try again";
