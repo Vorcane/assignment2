@@ -1,21 +1,25 @@
+
 function login() {
-    $('input#login-submit').on('click', function() {
-    var username = $('input#username').val();
-    var password = $('input#password').val();
-    if (($.trim(username) !== '') && ($.trim(password) !== '')) {
-        $.post('login.php', {username: username, password: password}, function(data) {
-            $('div#login-data').text(data);
-        });
-        checklogin();
-    }
-    }); 
+    "use strict";
+    $('input#login-submit').on('click', function () {
+        var username = $('input#username').val(),
+            password = $('input#password').val();
+        
+        if (($.trim(username) !== '') && ($.trim(password) !== '')) {
+            $.post('login.php', {username: username, password: password}, function (data) {
+                $('div#login-data').text(data);
+            });
+            checklogin();
+        }
+    });
 }
 
 function checklogin() {
-    var cookiename = "sessionID=";
-    var cookiearray = document.cookie.split(';'); //Splits the cookie into a sub array
-    $(document).ready(function(){
-        for(var i = 0; i <cookiearray.length; i++) {
+    "use strict";
+    var cookiename = "sessionID=",
+        cookiearray = document.cookie.split(';'); //Splits the cookie into a sub array
+    $(document).ready(function () {
+        for (var i = 0; i <cookiearray.length; i++) {
             var cookie = cookiearray[i]; //Gets the individual cookie from the array
             while (cookie.charAt(0)==' ') { //Clears blank space from the value
                 cookie = cookie.substring(1);
