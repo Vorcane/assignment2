@@ -14,7 +14,9 @@ function checklogin() {
         sessionID,
         cookie,
         retdata;
+    $('div#login-data').text("I get inside the check login function");
     $(document).ready(function () {
+        $('div#login-data').text("I get inside the document ready method");
         for (i = 0; i < cookiearray.length; i++) {
             cookie = cookiearray[i]; //Gets the individual cookie from the array
             while (cookie.charAt(0) === ' ') { //Clears blank space from the value
