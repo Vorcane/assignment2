@@ -3,6 +3,7 @@
 function login() {
     "use strict";
     $('input#login-submit').on('click', function () {
+        $('div#login-data').text("test");
         var username = $('input#username').val(),
             password = $('input#password').val();
         
