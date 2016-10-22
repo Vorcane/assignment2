@@ -4,6 +4,7 @@
 	$password = "X32674186";
 	$dbname = "X32674186";
 
+    echo "Made it into the php file; ayy lmao";
 	// Create Connection
 	$dbc = mysql_pconnect($host, $user, $password) or die("Can't connect" . mysql_error());
 	// Select database
