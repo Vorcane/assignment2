@@ -9,6 +9,7 @@ for(var i = 0; i <cookiearray.length; i++) {
         document.write(cookie.substring(name.length,cookie.length)); //Returns the cookie value if found
         
     } else { //If cookie doesnt exist do this
-        document.write("Cookie not found")
-    }
+        var found = false;
+    } 
 }
+if (found==false) {document.write("Cookie not found")}; //States if cookie is not found
