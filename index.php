@@ -5,7 +5,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--<script src="javascript/test.js"></script>-->
 
 </head>
 
@@ -38,7 +37,6 @@
 		</nav>
 		
 		<!-- Login system starts here -->
-			<div id="form-messages"></div>
 <!--			<form action="login()" method="post" onsubmit=" return validateForm()">-->
                 Username: <input type="text" id="username">
                 Password: <input type="password" id="password">
@@ -86,6 +84,7 @@
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
 	</div>
+    <script src="javascript/checklogin.js"></script>
 </body>
 </html>
 
