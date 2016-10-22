@@ -5,12 +5,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="javascript/deletecookie.js"></script>
+    <script src="javascript/loginscripts.js"></script>
 
 </head>
 
 <body>
-    <script src="javascript/checklogin.js"></script>
+    <script src="checklogin()"></script>
 	<div class="outer">
 		<!--Code for the header-->
 		<header>
@@ -44,7 +44,7 @@
                 Password: <input type="password" id="password">
                 <input type="submit" value="Login" id="login-submit">
                 <div id="login-data"></div>
-                <script src="javascript/login.js"></script>
+                <script src="login()"></script>
             </div>
 		<!-- Login system ends here -->
 		

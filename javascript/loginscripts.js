@@ -1,3 +1,16 @@
+function login() {
+    $('input#login-submit').on('click', function() {
+    var username = $('input#username').val();
+    var password = $('input#password').val();
+    if (($.trim(username) !== '') && ($.trim(password) !== '')) {
+        $.post('login.php', {username: username, password: password}, function(data) {
+            $('div#login-data').text(data);
+        });
+        checklogin();
+    }
+    }); 
+}
+
 function checklogin() {
     var cookiename = "sessionID=";
     var cookiearray = document.cookie.split(';'); //Splits the cookie into a sub array
@@ -28,4 +41,9 @@ function checklogin() {
                 } 
         }
     });
+}
+
+function deletecookie() {
+    var d = new Date();
+    document.cookie = name + " ;" + (d.getTime - 100) + ";path=/";    
 }
