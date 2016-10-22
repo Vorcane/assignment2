@@ -21,9 +21,7 @@
                 $found = true;
                 $name = $row['name'];
             }
-        }
-		
-	} else {
+        } else {
 		$found = false;
 	}
     mysql_close(); //Ends DB connection
