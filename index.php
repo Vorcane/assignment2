@@ -10,7 +10,7 @@
 
 </head>
 
-<body onload="checklogin()"> // This works
+<body onload="checklogin()">
 	<div class="outer">
 		<!--Code for the header-->
 		<header>

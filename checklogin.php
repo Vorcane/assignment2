@@ -20,10 +20,11 @@
             while($row=mysql_fetch_array($queryresult)){
                 $found = true;
                 $name = $row['name'];
+                $rank = $row['rank'];
             }
         } else {
 		$found = false;
 	}
     mysql_close(); //Ends DB connection
-    echo "$found;$name";
+    echo "$found;$name;$rank";
 ?>
