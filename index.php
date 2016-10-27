@@ -5,6 +5,7 @@
 	<title>HeatWave Gaming</title>
 	<meta charset="utf-8"></meta>
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
 </head>
 
 <body>
@@ -90,8 +91,7 @@
 		<footer>
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
-		
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>		
+			
         <script src="javascript/global.js"></script>	
         <script src="javascript/js.cookie.js"></script>
         <script src="javascript/loginscripts.js"></script>
