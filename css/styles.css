@@ -8,6 +8,15 @@ div.outer {
 }
 /*Finished container for outer layer*/
 
+/*FIX THIS JUST ROUIGH STYLES FOR THINGS*/
+.center {
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
 /*Setting up the main section with all the content*/
 section.mainCont {
 	width: 1150px;
@@ -18,15 +27,35 @@ section.mainCont {
 	overflow: auto;
 }
 
+/*Setting up the div for holding login form*/
+div.login-form {
+	width: 1150px;
+	border: 1px solid gray;
+	margin: 0 auto;
+	position: relative;
+	padding: 5px;
+	/*text-align: right; */
+}
+
+/*Setting up the about us section with all the content*/
+section.aboutus {
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+	padding: 5px;
+	overflow: auto;
+}
+
 div.prodContainer {
 	width: 265px;
-	height: 400px;
+	height: 300px;
 	border: 1px solid gray;
 	margin: 5px;
 	position: relative;
 	float: left;
 	padding: 5px;
 	text-align: center;
+	border-radius: 25px;
 }
 /*Finished main content*/
 
@@ -54,29 +83,8 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #333;
-}
-
-li {
-    float: left;
-    border-right:1px solid #bbb;
-}
-
-li:last-child {
-    border-right: none;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
+	height: 40px;
 }
 
 .active {
@@ -86,12 +94,62 @@ li a:hover:not(.active) {
 form.search {
 	color: white;
 	float: right;
-	padding: 13px;
+	padding: 10px;
 }
 /*Finished nav */
 
-/*Login*/
-.login_form {
-	border: 1px solid #AAA;
-	padding:10px;
+/*Dropdown*/
+ul li {
+     float:left;
+     position:relative;
+	 z-index: 999;
 }
+
+a:link, a:visited {
+     text-decoration: none;
+     color: #FFF;
+     font-weight:bold;
+}
+
+ul li a, ul li a:visited {
+     display:block;
+     color:#fff;
+     width:104px;
+     height:auto;
+     line-height:20px;
+     padding:10px;
+     text-align:center;
+}
+
+ul li a:hover {
+     display:block;
+     color: white;
+     background: black;
+     line-height:20px;
+     padding:10px;
+}
+
+ul li ul, ul li:hover ul li ul {
+     display: none;
+}
+ul li:hover ul {
+     display:block;
+     position:absolute; 
+     top:36px;
+     left:0;
+     height:auto;
+}
+
+ul li:hover ul li a {
+     display:block;
+     text-align:center; 
+     border-bottom:1px solid #FFF;
+}
+
+ul li:hover ul li:hover ul {
+     display:block;
+     position:absolute;
+     left:124px;
+     top:0;
+}
+

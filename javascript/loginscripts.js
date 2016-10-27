@@ -13,7 +13,7 @@ function checklogin() {
     var sessionID = Cookies.get('sessionID'),
         outputhtml;
     
-    $.post('checklogin.php', {sessionID: sessionID}, function (data) {
+    $.post('ajax/checklogin.php', {sessionID: sessionID}, function (data) {
         var retdata = data.split(';');
         if (retdata[0] === "1") {
             if (retdata[2] === "staff") { //If logged in user is staff rank load this
@@ -33,7 +33,7 @@ function login() {
         password = $('input#password').val();
 
     if (($.trim(username) !== '') && ($.trim(password) !== '')) {
-        $.post('login.php', {username: username, password: password}, function (data) {
+        $.post('ajax/login.php', {username: username, password: password}, function (data) {
             $('div#login-data').text(data);
         });
         location.reload();
@@ -65,10 +65,10 @@ function edituserdetails() {
         address = $('input#address').val();
         email = $('input#email').val();
         
-        $.post('checkpassword.php', {sessionID: sessionID}, function (data) {
+        $.post('ajax/checkpassword.php', {sessionID: sessionID}, function (data) {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
-                $.post('updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
+                $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
                     location.reload();
                 })
             }
@@ -102,7 +102,7 @@ function addproducts() {
         image = $('input#image').val();
         tags = $('input#tags').val();
         
-        $.post('addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
+        $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
             document.reload();   
         });
     });    

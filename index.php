@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="javascript/js.cookie.js"></script>
     <script src="javascript/loginscripts.js"></script>
+    <script src="js/global.js"></script>
 
 </head>
 
@@ -14,29 +15,80 @@
 	<div class="outer">
 		<!--Code for the header-->
 		<header>
-		<img src="./images/header.jpg" alt="header">
+		<img src="images/header.jpg" alt="header">
 		</header>
 		
-		<!--Code for the nav and the search bar-->
+<!--Code for the nav and the search bar-->
 		<nav>
 			<ul>
 				<!--Possibly make these drop down lists unless we dont have enough buttons-->
 				<!--Example of dropdown would be genre>fps>mmo>rpg etc
 				For price could be <20 <30 <30 etc make it easy to find cheap games
 				Poissbly add one for on sale and make like 3 games on sale-->
-				<li><a class="active" href="http://ceto.murdoch.edu.au/~32667253/assignment2/#">Home</a</li>
-				<li><a href="http://ceto.murdoch.edu.au/~32667253/assignment2/#">DROP DOWN LISTS</a></li>
-				<li><a href="http://ceto.murdoch.edu.au/~32667253/assignment2/#">GENRE</a></li>
-				<li><a href="http://ceto.murdoch.edu.au/~32667253/assignment2/#">PRICE</a></li>
-				<li><a href="http://ceto.murdoch.edu.au/~32667253/assignment2/#">HELP</a></li>
+				<li><a class="active" href="index.php">Home</a></li>
+				<li><a href="#">Price</a>
+					<ul>
+						<li><a href="#" id="utwent">Under $20</a></li>
+						<li><a href="#" id="ufifty">Under $50</a></li>
+						<li><a href="#" id="ofifty">Over $50</a></li>
+					</ul>
+				</li>
+				
+				<li><a href="#">Genre</a>
+					<ul>
+						<li><a href="#" id="fps">FPS</a></li>
+						<li><a href="#" id="mmo">MMO</a></li>
+						<li><a href="#" id="racing">Racing</a></li>
+						<li><a href="#" id="adventure">Adventure</a></li>
+						<li><a href="#" id="sandbox">Sandbox</a></li>
+						<li><a href="#" id="sports">Sports</a></li>
+						<li><a href="#" id="action">Action</a></li>
+						<li><a href="#" id="rts">RTS</a></li>
+						<li><a href="#" id="fighter">Fighter</a></li>
+						<li><a href="#" id="rpg">RPG</a></li>
+					</ul>
+				</li>
+				<li><a href="#" id="aboutus">About Us</a></li>
+				<li><a href="#">Help</a></li>
 				
 				<!--Code for the search bar-->
-				<form class="search" name="searchBar" onsubmit="return validate()" action="searchProduct.php" method="POST">
-					<label>Search: <input type="text" name="searchValue"> </label>
-					<input type="submit" name="Submit" value="Submit">
+				<form class="search" name="searchBar" action="javascript:AnyFunction();" method="POST">
+					<label>Search: <input type="text" id="search" name="searchbar" placeholder="Enter product name"></input> </label>
+					<input type="submit" id="search-submit" value="search"></input>
 				</form>
 			</ul>
 		</nav>
+		
+		<div class="login-form">
+			Username: <input type="text" id="username">
+            Password: <input type="password" id="password">
+            <input type="submit" value="Login" id="login-submit" onclick="login()">
+            <div id="login-data"></div>
+            <script login()></script>
+		</div>
+		
+		<!--Code for the section that will contain the products-->
+		<section class="mainCont" id="mainCont">
+			<div id="search-data">
+				<?php
+					require "database/connect.php";
+					
+					$query = mysql_query("SELECT * FROM products");
+					
+					# Displaying what the query retrieved
+					while ($row = mysql_fetch_assoc($query)) {
+						echo "<div class='prodContainer'>"; # Starting the container
+						echo "<p>" . $row["name"] . "</p>";
+						echo "<p>$" . $row["price"] . "</p>";
+						echo "<p>" . $row["description"] . "</p>";
+						echo "<p>" . $row["rating"] . "</p>";
+						echo "<form name='addButton' action='' method='POST'><input type='submit' name='addToC' value='Add to Cart'></input></form>";
+						echo "</div>"; # Ending the container
+					}
+					#echo (mysql_num_rows($query) !== 0) ? mysql_result($query, 0, "name") : "Not found";	
+				?>
+			</div>
+		</section>
 		
 		<!-- Login system starts here -->         
             <div id="login-form">
@@ -48,44 +100,9 @@
             </div>
 		<!-- Login system ends here -->
 		
-		<!--Code for the section that will contain the products-->
-        <section id="mainCont">
-			<?php
-				# Details for DB connection
-				$host = "localhost";
-				$user = "X32674186";
-				$password = "X32674186";
-				$dbname = "X32674186";
-				
-				# Connecting to the database
-				$dbc = mysql_connect($host, $user, $password) or die("Cant connect" . mysql_error());
-				mysql_select_db($dbname) or die("Select failed " . mysql_error());
-				
-				# SQL queries
-				$query = "SELECT * FROM products"; # Selects all from DB where searchvalue is contained in either name, description or tags
-				$result = mysql_query($query);
-				
-				# Displaying what the query retrieved
-				while ($row = mysql_fetch_Array($result)) {
-					print "<div class='prodContainer'>"; # Starting the container
-					print "<p>" . $row["name"] . "</p>";
-					print "<p>$" . $row["price"] . "</p>";
-					print "<p>" . $row["description"] . "</p>";
-					print "<p>" . $row["rating"] . "</p>";
-					print "<form name='addButton' action='' method='POST'><input type='submit' name='addToC' value='Add to Cart'></input></form>";
-					print "</div>"; # Ending the container
-				}
-				
-				# Closing connection
-				mysql_free_result ($result);
-				mysql_close();
-			?>
-		</section>
-		
 		<footer>
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
 	</div>
 </body>
 </html>
-
