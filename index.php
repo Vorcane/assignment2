@@ -91,7 +91,7 @@
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
 		
-		<script src="js/global.js"></script>	
+		<script src="javascript/global.js"></script>	
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="javascript/js.cookie.js"></script>
         <script src="javascript/loginscripts.js"></script>
