@@ -42,7 +42,7 @@ function login() {
 
 function edituserdetails() {
     "use strict";
-    document.write("I get into the function");
+    //document.write("I get into the function"); Gets here
     var outputhtml = 'Username: <input type="text" id="username"> Old password: <input type="password" id="oldpassword"> New password: <input type="password" id="newpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton"> ',
         editarray,
         username,
@@ -55,7 +55,7 @@ function edituserdetails() {
         sessionID = Cookies.get('sessionID');
     
     $('section#mainCont').html(outputhtml);
-    document.write("I should have outputted the html");
+    //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
         username = $('input#username').val();
         oldpassword = $('input#oldpassword').val();

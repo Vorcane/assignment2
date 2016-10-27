@@ -49,7 +49,7 @@
 		<!-- Login system ends here -->
 		
 		<!--Code for the section that will contain the products-->
-        <section class="mainCont">
+        <section id="mainCont">
 			<?php
 				# Details for DB connection
 				$host = "localhost";
