@@ -10,6 +10,7 @@ function deletecookie() {
 
 function checklogin() {
     "use strict";
+    document.write("Test");
     var sessionID = Cookies.get('sessionID'),
         outputhtml;
     
