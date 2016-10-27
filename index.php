@@ -85,14 +85,6 @@
 				?>
 			</div>
 		</section>
-		
-        <div class="login-form">
-			Username: <input type="text" id="username">
-            Password: <input type="password" id="password">
-            <input type="submit" value="Login" id="login-submit" onclick="login()">
-            <div id="login-data"></div>
-            <script login()></script>
-		</div>
 
 
 		<footer>
