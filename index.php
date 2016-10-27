@@ -58,7 +58,7 @@
 			</ul>
 		</nav>
 		
-		<div class="login-form">
+		<div class="login-form" id="login-form">
 			Username: <input type="text" id="username">
             Password: <input type="password" id="password">
             <input type="submit" value="Login" id="login-submit" onclick="login()">
@@ -67,7 +67,7 @@
 		</div>
 		
 		<!--Code for the section that will contain the products-->
-		<section class="mainCont">
+		<section class="mainCont" id="mainCont">
 			<div id="search-data">
 				<?php
 					require "database/connect.php";
