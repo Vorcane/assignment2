@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang = "en" xmlns = "http://www.w3.org/1999/xhtml" >
-
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>HeatWave Gaming</title>
-	<meta charset="utf-8"></meta>
-	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="javascript/js.cookie.js"></script>
+    <script src="javascript/loginscripts.js"></script>
+    <script src="js/global.js"></script>
+
 </head>
 
-<body>
+<body onload="checklogin()">
 	<div class="outer">
 		<!--Code for the header-->
 		<header>
 		<img src="images/header.jpg" alt="header">
 		</header>
 		
-		<!--Code for the nav and the search bar-->
+<!--Code for the nav and the search bar-->
 		<nav>
 			<ul>
 				<!--Possibly make these drop down lists unless we dont have enough buttons-->
@@ -64,7 +68,7 @@
 		</div>
 		
 		<!--Code for the section that will contain the products-->
-		<section class="mainCont">
+		<section class="mainCont" id="mainCont">
 			<div id="search-data">
 				<?php
 					require "database/connect.php";
@@ -86,27 +90,19 @@
 			</div>
 		</section>
 		
-        <div class="login-form">
-			Username: <input type="text" id="username">
-            Password: <input type="password" id="password">
-            <input type="submit" value="Login" id="login-submit" onclick="login()">
-            <div id="login-data"></div>
-            <script login()></script>
-		</div>
-
-
+		<!-- Login system starts here -->         
+            <div id="login-form">
+                Username: <input type="text" id="username">
+                Password: <input type="password" id="password">
+                <input type="submit" value="Login" id="login-submit" onclick="login()">
+                <div id="login-data"></div>
+                <script login()></script>
+            </div>
+		<!-- Login system ends here -->
+		
 		<footer>
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
-		
-		<script src="js/global.js"></script>	
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="javascript/js.cookie.js"></script>
-        <script src="javascript/loginscripts.js"></script>
 	</div>
-	
-	
 </body>
-</html> 
-
-
+</html>
