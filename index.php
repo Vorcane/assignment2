@@ -6,6 +6,8 @@
 	<meta charset="utf-8"></meta>
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+    <script src="javascript/js.cookie.js"></script>
+    <script src="javascript/loginscripts.js"></script>
 </head>
 
 <body onload="checklogin()">
@@ -91,13 +93,9 @@
 		<footer>
 			<p>Created by Lachlan + Mitchell</p>
 		</footer>
-			
-        <script src="javascript/global.js"></script>	
-        <script src="javascript/js.cookie.js"></script>
-        <script src="javascript/loginscripts.js"></script>
 	</div>
 	
-	
+    <script src="javascript/global.js"></script>		
 </body>
 </html> 
 
