@@ -4,7 +4,7 @@
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    document.reload();
+    location.reload();
 }
 
 function checklogin() {
