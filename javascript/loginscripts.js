@@ -63,12 +63,13 @@ function edituserdetails() {
         address = $('input#address').val();
         email = $('input#email').val();
         
-    $.post('checkpassword.php', {sessionID: sessionID}, function (data) {
-        var retdata = data.split(';');
-        if (retdata[0] === "1" && retdata[1] === oldpassword) {
-            $.post('updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                $('div#login-data').text(data);
-            })
-        }
+        $.post('checkpassword.php', {sessionID: sessionID}, function (data) {
+            var retdata = data.split(';');
+            if (retdata[0] === "1" && retdata[1] === oldpassword) {
+                $.post('updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
+                    $('div#login-data').text(data);
+                })
+            }
+        });
     });
 }
