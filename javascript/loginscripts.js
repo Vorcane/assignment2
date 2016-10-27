@@ -18,6 +18,7 @@ function checklogin() {
         if (retdata[0] === "1") {
             if (retdata[2] === "staff") { //If logged in user is staff rank load this
                 outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='opencart()' type='button'>Go to cart</button> <button onclick='addproducts()' type='button'>Add Products</button>";
+                document.write("test");
             }
             if (retdata[2] === "user") { //If logged in user is user rank load this
                 outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='opencart()' type='button'>Go to cart</button>";
