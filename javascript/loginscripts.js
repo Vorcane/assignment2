@@ -3,9 +3,8 @@
 
 function deletecookie() {
     "use strict";
-    var outputhtml = 'Username: <input type="text" id="username"> Password: <input type="password" id="password"> <input type="submit" value="Login" id="login-submit" onclick="login()"> <div id="login-data"></div> <script login()></script>';
     Cookies.remove('sessionID');
-    $('div#login-form').html(outputhtml);
+    document.reload();
 }
 
 function checklogin() {
