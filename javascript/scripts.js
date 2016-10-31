@@ -133,5 +133,6 @@ function addtocart(productID) {
         currentcart = "";
     }
     currentcart.concat(productID, "*");
-    Cookies.set('cart', "'" + currentcart + "'");
+    document.write(currentcart);
+    Cookies.set('cart', currentcart);
 }
