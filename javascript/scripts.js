@@ -1,6 +1,18 @@
 /*global $, Cookies*/
 /*jslint plusplus: true*/
 
+
+function loadcart() {
+    "use strict";
+    var currentcart = Cookies.get('cart'),
+        splitcart = currentcart.split(';');
+    splitcart.forEach(function (productID) {
+        $.post('ajax/cart.php', {productID: productID}, function (data) {
+            $('div#cart').append('<li><a href="#">' + data + "</a></li>");
+        });
+    });
+}
+
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
@@ -30,13 +42,14 @@ function checklogin() {
 function login() {
     "use strict";
     var username = $('input#username').val(),
-        password = $('input#password').val();
+        password = $('input#password').val(),
+        found;
 
     if (($.trim(username) !== '') && ($.trim(password) !== '')) {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
-            var found = data;
+            found = data;
         });
-        if(found==1){
+        if (found === 1) {
             location.reload();
         }
     }
@@ -72,7 +85,7 @@ function edituserdetails() {
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
                     location.reload();
-                })
+                });
             }
         });
     });
@@ -105,23 +118,14 @@ function addproducts() {
         tags = $('input#tags').val();
         
         $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
-            document.reload();   
+            document.reload();
         });
-    });    
-}
-
-function addtocart(productID){
-    var currentcart = Cookies.get('cart');
-    currentcart.concat(productID,";");
-    Cookies.set('cart', currentcart);
-}
-
-function loadcart(){
-    var currentcart = Cookies.get('cart');
-    var splitcart = currentcart.split(';');
-    splitcart.forEach(function(productID) {
-       $.post('ajax/cart.php', {productID: productID}, function (data) {
-           $('div#cart').append('<li><a href="#">' + data + "</a></li>")
-       }); 
     });
+}
+
+function addtocart(productID) {
+    "use strict";
+    var currentcart = Cookies.get('cart');
+    currentcart.concat(productID, ";");
+    Cookies.set('cart', currentcart);
 }
