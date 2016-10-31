@@ -51,11 +51,10 @@ function login() {
     if (($.trim(username) !== '') && ($.trim(password) !== '')) {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
-            document.write(data);
+            if (found === 1) {
+                location.reload();
+            }
         });
-        if (found === 1) {
-            location.reload();
-        }
     }
 }
 
