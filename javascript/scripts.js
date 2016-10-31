@@ -130,8 +130,9 @@ function addtocart(productID) {
     "use strict";
     var currentcart = Cookies.get('cart');
     if (!currentcart) {
-        currentcart = " ";
+        currentcart = "";
     }
     currentcart.concat(productID, "*");
     Cookies.set('cart', currentcart);
+    document.write(productID);
 }
