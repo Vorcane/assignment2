@@ -24,6 +24,7 @@ function checklogin() {
             $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
     });
+    loadcart(); // Loads the cart on page load
 }
 
 function login() {
@@ -33,9 +34,11 @@ function login() {
 
     if (($.trim(username) !== '') && ($.trim(password) !== '')) {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
-            $('div#login-data').text(data);
+            var found = data;
         });
-        location.reload();
+        if(found==1;){
+            location.reload();
+        }
     }
 }
 
@@ -105,4 +108,20 @@ function addproducts() {
             document.reload();   
         });
     });    
+}
+
+function addtocart(productID){
+    var currentcart = Cookies.get('cart');
+    currentcart.concat(productID,";");
+    Cookies.set('cart', currentcart);
+}
+
+function loadcart(){
+    var currentcart = Cookies.get('cart');
+    var splitcart = currentcart.split(';');
+    splitcart.forEach(function(productID) {
+       $.post('ajax/cart.php', {productID: productID}, function (data) {
+           $('div#cart').append('<li><a href="#">' + data + "</a></li>")
+       }); 
+    });
 }

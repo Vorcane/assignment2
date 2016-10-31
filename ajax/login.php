@@ -30,7 +30,7 @@
                         $cookiename = "sessionID";
                         $cookievalue = $sessionid;
                         setcookie($cookiename, $cookievalue, time()+ (86400 * 7), "/"); // Sets cookie with the id for expiry in a week
-
+                        $found = 1;
                     } else {
                         echo "Login failed, please try again";
                     }
@@ -39,5 +39,6 @@
 	} else {
 		echo "Invalid username or password";
 	}
+    echo "$found";
     mysql_close(); //Ends DB connection
 ?>

@@ -1,10 +1,11 @@
 /*Container to hold everything outer layer*/
 div.outer {
 	width: 1200px;
-	border: 1px solid gray;
+	border: 2px solid black;
 	margin: 0 auto;
 	position: relative;
 	padding: 5px;
+	border-radius: 20px;
 }
 /*Finished container for outer layer*/
 
@@ -17,10 +18,23 @@ div.outer {
 	font-weight: bold;
 }
 
+.left {
+	text-align: left;
+	font-size: 150%;
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.inline {
+	display: inline;
+}
 /*Setting up the main section with all the content*/
 section.mainCont {
 	width: 1150px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 	margin: 0 auto;
 	position: relative;
 	padding: 5px;
@@ -30,11 +44,14 @@ section.mainCont {
 /*Setting up the div for holding login form*/
 div.login-form {
 	width: 1150px;
-	border: 1px solid gray;
+	border: 2px solid black;
 	margin: 0 auto;
 	position: relative;
 	padding: 5px;
-	/*text-align: right; */
+	margin-bottom: 5px;
+	text-align: right;
+	border-radius: 10px;
+	overflow: auto;
 }
 
 /*Setting up the about us section with all the content*/
@@ -47,15 +64,16 @@ section.aboutus {
 }
 
 div.prodContainer {
-	width: 265px;
+	width: 263px;
 	height: 300px;
-	border: 1px solid gray;
+	border: 2px solid black;
 	margin: 5px;
 	position: relative;
 	float: left;
 	padding: 5px;
 	text-align: center;
 	border-radius: 25px;
+	background-color: #f4f5f7;
 }
 /*Finished main content*/
 

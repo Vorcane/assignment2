@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
     <script src="javascript/js.cookie.js"></script>
-    <script src="javascript/loginscripts.js"></script>
+    <script src="javascript/scripts.js"></script>
 </head>
 
 <body onload="checklogin()">
@@ -49,7 +49,11 @@
 				</li>
 				<li><a href="#" id="aboutus">About Us</a></li>
 				<li><a href="#">Help</a></li>
-				
+				<li><a href="#">Cart</a>
+                    <ul>
+                        <div id="cart"></div>
+                    </ul>
+                </li>
 				<!--Code for the search bar-->
 				<form class="search" name="searchBar" action="javascript:AnyFunction();" method="POST">
 					<label>Search: <input type="text" id="search" name="searchbar" placeholder="Enter product name"></input> </label>
@@ -76,12 +80,13 @@
 					
 					# Displaying what the query retrieved
 					while ($row = mysql_fetch_assoc($query)) {
+                        $productID = $row["productID"];
 						echo "<div class='prodContainer'>"; # Starting the container
 						echo "<p>" . $row["name"] . "</p>";
 						echo "<p>$" . $row["price"] . "</p>";
 						echo "<p>" . $row["description"] . "</p>";
 						echo "<p>" . $row["rating"] . "</p>";
-						echo "<form name='addButton' action='' method='POST'><input type='submit' name='addToC' value='Add to Cart'></input></form>";
+						echo "<form name='addButton' action='addtocart($productID)' method='POST'><input type='submit' name='addToC' value='Add to Cart' id='$productID'></input></form>";
 						echo "</div>"; # Ending the container
 					}
 					#echo (mysql_num_rows($query) !== 0) ? mysql_result($query, 0, "name") : "Not found";	
