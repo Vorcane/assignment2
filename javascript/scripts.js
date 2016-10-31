@@ -51,7 +51,7 @@ function login() {
     if (($.trim(username) !== '') && ($.trim(password) !== '')) {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
-            if (found === "1") {
+            if (found === "1") { // Only reload on valid credentials
                 location.reload();
             }
         });
@@ -129,6 +129,9 @@ function addproducts() {
 function addtocart(productID) {
     "use strict";
     var currentcart = Cookies.get('cart');
+    if (!currentcart) {
+        currentcart = " ";
+    }
     currentcart.concat(productID, "*");
     Cookies.set('cart', currentcart);
 }
