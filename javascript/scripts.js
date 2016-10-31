@@ -36,7 +36,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             var found = data;
         });
-        if(found==1;){
+        if(found==1){
             location.reload();
         }
     }
