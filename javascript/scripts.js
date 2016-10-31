@@ -4,13 +4,14 @@
 
 function loadcart() {
     "use strict";
-    var currentcart = Cookies.get('cart'),
-        splitcart = currentcart.split('*');
-    splitcart.forEach(function (productID) {
-        $.post('ajax/cart.php', {productID: productID}, function (data) {
-            $('div#cart').append('<li><a href="#">' + data + "</a></li>");
-        });
-    });
+    var currentcart = Cookies.get('cart');
+    document.write(currentcart);
+        //splitcart = currentcart.split('*');
+//    splitcart.forEach(function (productID) {
+//        $.post('ajax/cart.php', {productID: productID}, function (data) {
+//            $('div#cart').append('<li><a href="#">' + data + "</a></li>");
+//        });
+    //});
 }
 
 function deletecookie() {
