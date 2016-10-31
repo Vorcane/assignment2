@@ -51,7 +51,9 @@
 				<li><a href="#">Help</a></li>
 				<li><a href="#">Cart</a>
                     <ul>
-                        <div id="cart"></div>
+                        <div id="cart">
+                            
+                        </div>
                     </ul>
                 </li>
 				<!--Code for the search bar-->
