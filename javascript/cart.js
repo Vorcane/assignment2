@@ -1,6 +1,6 @@
 function addtocart(productID){
     var currentcart = Cookies.get('cart');
-    currentcart.concat(productID,";");
+    currentcart.concat(productID,"*");
     Cookies.set('cart', currentcart);
 }
 

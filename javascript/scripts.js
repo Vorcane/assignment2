@@ -5,7 +5,7 @@
 function loadcart() {
     "use strict";
     var currentcart = Cookies.get('cart'),
-        splitcart = currentcart.value.split(';');
+        splitcart = currentcart.split('*');
     splitcart.forEach(function (productID) {
         $.post('ajax/cart.php', {productID: productID}, function (data) {
             $('div#cart').append('<li><a href="#">' + data + "</a></li>");
@@ -126,6 +126,6 @@ function addproducts() {
 function addtocart(productID) {
     "use strict";
     var currentcart = Cookies.get('cart');
-    currentcart.concat(productID, ";");
+    currentcart.concat(productID, "*");
     Cookies.set('cart', currentcart);
 }
