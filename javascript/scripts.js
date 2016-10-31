@@ -132,7 +132,6 @@ function addtocart(productID) {
     if (!currentcart) {
         currentcart = "";
     }
-    currentcart.concat(productID, "*");
-    document.write(currentcart);
+    currentcart = currentcart.concat(productID, "*");
     Cookies.set('cart', currentcart);
 }
