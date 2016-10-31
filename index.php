@@ -57,10 +57,19 @@
                     </ul>
                 </li>
 				<!--Code for the search bar-->
-				<form class="search" name="searchBar" action="javascript:AnyFunction();" method="POST">
-					<label>Search: <input type="text" id="search" name="searchbar" placeholder="Enter product name"></input> </label>
-					<input type="submit" id="search-submit" value="search"></input>
-				</form>
+                <?php
+                    if(!isset($_COOKIE[$lastsearch])) {
+                        $placeholdertext = "Enter product name";
+                    } else {
+                        $placeholdertext = "Last search: $_COOKIE[$lastsearch]";
+                    }
+
+                
+                    <form class="search" name="searchBar" action="javascript:AnyFunction();" method="POST">
+                        <label>Search: <input type="text" id="search" name="searchbar" placeholder="$placeholdertext"></input> </label>
+                        <input type="submit" id="search-submit" value="search"></input>
+                    </form>
+                ?>
 			</ul>
 		</nav>
 		

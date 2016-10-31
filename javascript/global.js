@@ -1,6 +1,7 @@
 //Function to update page to only show search value
 $("input#search-submit").on("click", function() {
 	var search = $("input#search").val();
+    Cookies.set('lastsearch', search); //Sets the last search cookie
 	
 	if ($.trim(search) != "") {
 		$.post("ajax/product.php", {search: search}, function(data) {
