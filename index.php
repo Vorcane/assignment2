@@ -52,7 +52,7 @@
 				<li><a href="#">Cart</a>
                     <ul>
                         <div id="cart">
-                            
+                            <li><a href="#" onclick="clearcart()">Clear cart</a></li>
                         </div>
                     </ul>
                 </li>
