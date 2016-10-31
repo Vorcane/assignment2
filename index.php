@@ -58,6 +58,7 @@
                 </li>
 				<!--Code for the search bar-->
                 <?php
+                    $lastsearch = "";
                     if(!isset($_COOKIE[$lastsearch])) {
                         $placeholdertext = "Enter product name";
                     } else {
