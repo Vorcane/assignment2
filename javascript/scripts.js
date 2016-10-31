@@ -136,7 +136,8 @@ function addtocart(productID) {
     Cookies.set('cart', currentcart);
 }
 
-clearcart() {
+function clearcart() {
+    "use strict";
     Cookies.set('cart', '');
-    location.reload;
+    location.reload();
 }
