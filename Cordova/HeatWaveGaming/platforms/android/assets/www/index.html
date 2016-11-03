@@ -33,17 +33,93 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+        <script src="js/js.cookie.js"></script>
+        <script src="js/scripts.js"></script>
+        <title>HeatWave Gaming</title>
     </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    <body onload="checklogin()">
+	<div class="outer">
+		<!--Code for the header-->
+		<header>
+		<img src="img/header.jpg" alt="header">
+		</header>
+		
+		<!--Code for the nav and the search bar-->
+		<nav>
+			<ul>
+				<!--Possibly make these drop down lists unless we dont have enough buttons-->
+				<!--Example of dropdown would be genre>fps>mmo>rpg etc
+				For price could be <20 <30 <30 etc make it easy to find cheap games
+				Poissbly add one for on sale and make like 3 games on sale-->
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="#">Price</a>
+					<ul>
+						<li><a href="#" id="utwent">Under $20</a></li>
+						<li><a href="#" id="ufifty">Under $50</a></li>
+						<li><a href="#" id="ofifty">Over $50</a></li>
+					</ul>
+				</li>
+				
+				<li><a href="#">Genre</a>
+					<ul>
+						<li><a href="#" id="fps">FPS</a></li>
+						<li><a href="#" id="mmo">MMO</a></li>
+						<li><a href="#" id="racing">Racing</a></li>
+						<li><a href="#" id="adventure">Adventure</a></li>
+						<li><a href="#" id="sandbox">Sandbox</a></li>
+						<li><a href="#" id="sports">Sports</a></li>
+						<li><a href="#" id="action">Action</a></li>
+						<li><a href="#" id="rts">RTS</a></li>
+						<li><a href="#" id="fighter">Fighter</a></li>
+						<li><a href="#" id="rpg">RPG</a></li>
+					</ul>
+				</li>
+				<li><a href="#" id="aboutus">About Us</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Cart</a>
+                    <ul>
+                        <div id="cart">
+                            <li><a href="#" onclick="clearcart()">Clear cart</a></li>
+                        </div>
+                    </ul>
+                </li>
+				<!--Code for the search bar-->
+<!--
+                <div id="searchbardiv">
+                </div>
+-->
+                <form class='search' name='searchBar'>
+                    <label>Search 
+                        <input type='text' id='search' name='searchBar' placeholder='Enter product here'></input>
+                    </label>
+                    <input type='submit' id='search-submit' value='search'></input>
+                </form>
+			</ul>
+		</nav>
+		
+		<div class="login-form" id="login-form">
+			Username: <input type="text" id="username">
+            Password: <input type="password" id="password">
+            <input type="submit" value="Login" id="login-submit" onclick="login()">
+            <div id="login-data"></div>
+            <script login()></script>
+		</div>
+		
+		<!--Code for the section that will contain the products-->
+		<section class="mainCont" id="mainCont">
+			<div id="search-data">
+				
+			</div>
+		</section>
+
+
+		<footer>
+			<p>Created by Lachlan + Mitchell</p>
+		</footer>
+	</div>
+	
+    <script src="js/global.js"></script>		
+</body>
 </html>

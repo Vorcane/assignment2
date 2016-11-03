@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.heatwave.gaming" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
     <name>HeatWaveGaming</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -17,8 +27,4 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>

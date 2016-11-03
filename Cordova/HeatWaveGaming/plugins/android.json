@@ -9,6 +9,12 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.heatwave.gaming"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.heatwave.gaming"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.heatwave.gaming"
         }
     },
     "dependent_plugins": {}
