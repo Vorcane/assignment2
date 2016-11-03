@@ -45,12 +45,6 @@ function displayproducts() {
     });
 }
 
-function deletecookie() {
-    "use strict";
-    Cookies.remove('sessionID');
-    location.reload();
-}
-
 function checklogin() {
     "use strict";
     var sessionID = Cookies.get('sessionID'),
@@ -71,6 +65,12 @@ function checklogin() {
    // loadcart(); // Loads the cart on page load
     searchbar(); // Loads the search bar on page load
     displayproducts(); //Loads the products on page load
+}
+
+function deletecookie() {
+    "use strict";
+    Cookies.remove('sessionID');
+    checklogin();
 }
 
 function login() {
@@ -118,7 +118,7 @@ function edituserdetails() {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                    location.reload();
+                    displayproducts();
                 });
             }
         });
