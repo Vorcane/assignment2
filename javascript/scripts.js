@@ -30,11 +30,8 @@ function searchbar() {
 
 function displayproducts() {
     'use strict';
-    $.ajax({
-        url: 'ajax/displayproducts.php',
-        success: function (data) {
-            $('div#search-data').html(data);
-        }
+    $.post("ajax/displayproducts.php", function (data) {
+        $('div#search-data').html(data);
     });
 }
 
