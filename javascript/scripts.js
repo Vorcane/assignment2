@@ -33,6 +33,7 @@ function searchbar() {
                 $("div#search-data").html(data);
             });
         }
+        return false;
     });
 }
 
