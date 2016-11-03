@@ -163,6 +163,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    loadcart();
+    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
+    $('div#cart').html = outputhtml;
 }
 
