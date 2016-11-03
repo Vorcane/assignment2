@@ -18,14 +18,11 @@ function loadcart() {
 
 function searchbar() {
     "use strict";
-    var lastsearch = Cookies.get('lastsearch'),
-        outputhtml = " ";
+    var lastsearch = Cookies.get('lastsearch');
     if (!lastsearch) {
         lastsearch = "Enter product name";
     }
-    outputhtml = "<form class='search' name='searchBar' action='' method='POST'>    <label>Search: <input type='text' id='search' name='searchbar' placeholder='" + lastsearch + "'></input> </label><input type='submit' id='search-submit' value='search'></input> </form>";
-    
-    $('div#searchbardiv').html(outputhtml);
+    $("search").attr("placeholder", lastsearch);
     
     $("input#search-submit").on("click", function () {
         var search = $("input#search").val();
