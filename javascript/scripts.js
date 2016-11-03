@@ -62,7 +62,7 @@ function checklogin() {
             $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
     });
-   // loadcart(); // Loads the cart on page load
+    loadcart(); // Loads the cart on page load
     searchbar(); // Loads the search bar on page load
     displayproducts(); //Loads the products on page load
 }
@@ -70,7 +70,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    checklogin();
+    location.reload();
 }
 
 function login() {
@@ -83,7 +83,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
             if (found === "1") { // Only reload on valid credentials
-                checklogin();
+                location.reload();
             }
         });
     }
@@ -118,7 +118,7 @@ function edituserdetails() {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                    displayproducts();
+                    location.reload();
                 });
             }
         });
@@ -152,7 +152,7 @@ function addproducts() {
         tags = $('input#tags').val();
         
         $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
-            displayproducts();
+            location.reload();
         });
     });
 }
@@ -170,7 +170,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    loadcart();
+    location.reload();
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }
