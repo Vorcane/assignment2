@@ -22,7 +22,7 @@ function searchbar() {
     if (!lastsearch) {
         lastsearch = "Enter product name";
     }
-    $("search").attr("placeholder", lastsearch);
+    $("input#search").attr("placeholder", lastsearch);
     
     $("input#search-submit").on("click", function () {
         var search = $("input#search").val();
@@ -83,7 +83,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
             if (found === "1") { // Only reload on valid credentials
-                location.reload();
+                checklogin();
             }
         });
     }
@@ -152,7 +152,7 @@ function addproducts() {
         tags = $('input#tags').val();
         
         $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
-            document.reload();
+            displayproducts();
         });
     });
 }
@@ -170,7 +170,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    location.reload(true);
+    loadcart();
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }
