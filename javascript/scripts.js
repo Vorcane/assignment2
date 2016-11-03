@@ -16,6 +16,28 @@ function loadcart() {
     }
 }
 
+function searchbar() {
+    "use strict";
+    var lastsearch = Cookies.get('lastsearch'),
+        outputhtml = " ";
+    if (!lastsearch) {
+        lastsearch = "Enter product name";
+    }
+    outputhtml = "<form class='search' name='searchBar' action='javascript:AnyFunction();' method='POST'>    <label>Search: <input type='text' id='search' name='searchbar' placeholder='" + lastsearch + "'></input> </label><input type='submit' id='search-submit' value='search'></input> </form>";
+    
+    $('div#searchbardiv').html(outputhtml);
+}
+
+function displayproducts() {
+    'use strict';
+    $.ajax({
+        url: 'ajax/displayproducts.php',
+        success: function (data) {
+            $('div#search-data').html(data);
+        }
+    });
+}
+
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
@@ -40,6 +62,8 @@ function checklogin() {
         }
     });
     loadcart(); // Loads the cart on page load
+    searchbar(); // Loads the search bar on page load
+    displayproducts(); //Loads the products on page load
 }
 
 function login() {
@@ -141,3 +165,4 @@ function clearcart() {
     Cookies.set('cart', '');
     location.reload();
 }
+
