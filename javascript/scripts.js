@@ -60,7 +60,7 @@ function checklogin() {
             $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
     });
-    loadcart(); // Loads the cart on page load
+   // loadcart(); // Loads the cart on page load
     searchbar(); // Loads the search bar on page load
     displayproducts(); //Loads the products on page load
 }
