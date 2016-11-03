@@ -163,6 +163,6 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    location.reload();
+    loadcart();
 }
 
