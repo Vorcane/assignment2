@@ -1,5 +1,5 @@
 <?php
-					require "database/connect.php";
+					require "../database/connect.php";
 					
 					$query = mysql_query("SELECT * FROM products");
 					
