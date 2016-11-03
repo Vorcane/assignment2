@@ -1,16 +1,16 @@
 /*global $, Cookies*/ //JSlint fixes
 //Function to update page to only show search value
-$("input#search-submit").on("click", function () {
-    'use strict';
-	var search = $("input#search").val();
-    Cookies.set('lastsearch', search); //Sets the last search cookie
-	
-	if ($.trim(search) !== "") {
-		$.post("ajax/product.php", {search: search}, function (data) {
-			$("div#search-data").html(data);
-		});
-	}
-});
+//$("input#search-submit").on("click", function () {
+//    'use strict';
+//	var search = $("input#search").val();
+//    Cookies.set('lastsearch', search); //Sets the last search cookie
+//	
+//	if ($.trim(search) !== "") {
+//		$.post("ajax/product.php", {search: search}, function (data) {
+//			$("div#search-data").html(data);
+//		});
+//	}
+//});
 
 // CODE FOR SEARCHING GENRE BELOW
 // CODE FOR SEARCHING GENRE BELOW

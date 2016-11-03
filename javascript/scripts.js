@@ -23,9 +23,20 @@ function searchbar() {
     if (!lastsearch) {
         lastsearch = "Enter product name";
     }
-    outputhtml = "<form class='search' name='searchBar' action='javascript:AnyFunction();' method='POST'>    <label>Search: <input type='text' id='search' name='searchbar' placeholder='" + lastsearch + "'></input> </label><input type='submit' id='search-submit' value='search'></input> </form>";
+    outputhtml = "<form class='search' name='searchBar' action='' method='POST'>    <label>Search: <input type='text' id='search' name='searchbar' placeholder='" + lastsearch + "'></input> </label><input type='submit' id='search-submit' value='search'></input> </form>";
     
     $('div#searchbardiv').html(outputhtml);
+    
+    $("input#search-submit").on("click", function () {
+        var search = $("input#search").val();
+        Cookies.set('lastsearch', search);
+        
+        if ($.trim(search)) {
+            $.post("ajax/product.php", {search: search}, function (data) {
+                $("div#search-data").html(data);
+            });
+        }
+    });
 }
 
 function displayproducts() {
