@@ -25,6 +25,7 @@ function searchproduct() {
             $("div#search-data").html(data);
         });
     }
+    return false;
 }
 
 function searchbar() {
@@ -35,17 +36,17 @@ function searchbar() {
     }
     $("input#search").attr("placeholder", lastsearch);
     
-    $("input#search-submit").on("click", function () {
-        var search = $("input#search").val();
-        Cookies.set('lastsearch', search);
-        
-        if ($.trim(search)) {
-            $.post("ajax/product.php", {search: search}, function (data) {
-                $("div#search-data").html(data);
-            });
-        }
-        return true;
-    });
+//    $("input#search-submit").on("click", function () {
+//        var search = $("input#search").val();
+//        Cookies.set('lastsearch', search);
+//        
+//        if ($.trim(search)) {
+//            $.post("ajax/product.php", {search: search}, function (data) {
+//                $("div#search-data").html(data);
+//            });
+//        }
+//        return true;
+//    });
 }
 
 function displayproducts() {
