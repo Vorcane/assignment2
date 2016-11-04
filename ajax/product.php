@@ -15,7 +15,7 @@
 		echo "<p>$" . $row["price"] . "</p>";
 		echo "<p>" . $row["description"] . "</p>";
 		echo "<p>" . $row["rating"] . "</p>";
-		echo "<form name='addButton' action='addtocart($productID)' method='POST'><input type='submit' name='addToC' value='Add to Cart'></input></form>";
+		echo "<form name='addButton' action='' method='POST'><input type='submit' name='addToC' value='Add to Cart' onclick='addtocart($productID)'></input></form>";
 		echo "</div>"; # Ending the container
 	}
 	#echo (mysql_num_rows($query) !== 0) ? mysql_result($query, 0, "name") : "Not found";
