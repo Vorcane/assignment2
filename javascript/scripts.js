@@ -8,11 +8,11 @@ function loadcart() {
         splitcart;
     if (currentcart) {
         splitcart = currentcart.split("*");
-        splitcart.forEach(function (productID) {
-            $.post('ajax/cart.php', {productID: productID}, function (data) {
-                $('div#cart').append('<li><a href="#">' + data + "</a></li>");
-            });
-        });
+//        splitcart.forEach(function (productID) {
+//            $.post('ajax/cart.php', {productID: productID}, function (data) {
+//                $('div#cart').append('<li><a href="#">' + data + "</a></li>");
+//            });
+//        });
     }
 }
 
