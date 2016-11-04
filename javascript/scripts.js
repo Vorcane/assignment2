@@ -166,7 +166,7 @@ function addtocart(productID) {
     }
     currentcart = currentcart.concat(productID, "*");
     Cookies.set('cart', currentcart);
-    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
+    //location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
 }
 
 function clearcart() {
