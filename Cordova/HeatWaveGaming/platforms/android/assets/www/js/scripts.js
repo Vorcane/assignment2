@@ -83,7 +83,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     window.localStorage.setItem('sessionID', '0');
-    location.reload();
+    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
 }
 
 function login() {
@@ -97,7 +97,7 @@ function login() {
             var retdata = data.split(';');
             if (retdata[0] === "1") { // Only reload on valid credentials
                 window.localStorage.setItem('sessionID', retdata[1]);
-                location.reload();
+                location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
             }
         });
     }
@@ -132,7 +132,7 @@ function edituserdetails() {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                    location.reload();
+                    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
                 });
             }
         });
@@ -166,7 +166,7 @@ function addproducts() {
         tags = $('input#tags').val();
         
         $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
-            location.reload();
+            location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
         });
     });
 }
@@ -184,7 +184,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     window.localStorage.setItem('cart', '');
-    location.reload();
+    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }
