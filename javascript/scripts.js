@@ -171,7 +171,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    location.reload();
+    location.href = 'http://ceto.murdoch.edu.au/~32667253/assignment2/#';
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }

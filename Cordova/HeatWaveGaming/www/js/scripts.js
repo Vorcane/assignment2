@@ -1,15 +1,15 @@
-/*global $, Cookies, Connection*/
+/*global $, Connection*/
 /*jslint plusplus: true*/
 
 
 function loadcart() {
     "use strict";
-    var currentcart = Cookies.get('cart'),
+    var currentcart = window.localStorage.getItem('cart'),
         splitcart;
     if (currentcart) {
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID) {
-            $.post('ajax/cart.php', {productID: productID}, function (data) {
+            $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/cart.php', {productID: productID}, function (data) {
                 $('div#cart').append('<li><a href="#">' + data + "</a></li>");
             });
         });
@@ -18,7 +18,7 @@ function loadcart() {
 
 function searchbar() {
     "use strict";
-    var lastsearch = Cookies.get('lastsearch');
+    var lastsearch = window.localStorage.getItem('lastsearch');
     if (!lastsearch) {
         lastsearch = "Enter product name";
     }
@@ -26,10 +26,10 @@ function searchbar() {
     
     $("input#search-submit").on("click", function () {
         var search = $("input#search").val();
-        Cookies.set('lastsearch', search);
+        window.localStorage.setItem('lastsearch', search);
         
         if ($.trim(search)) {
-            $.post("ajax/product.php", {search: search}, function (data) {
+            $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/product.php", {search: search}, function (data) {
                 $("div#search-data").html(data);
             });
         }
@@ -39,7 +39,7 @@ function searchbar() {
 
 function displayproducts() {
     'use strict';
-    $.post("ajax/displayproducts.php", function (data, status) {
+    $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/displayproducts.php", function (data, status) {
         if (status === "success") {
             $('div#search-data').html(data);
         }
@@ -60,10 +60,10 @@ function checklogin() {
             window.location = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
         }
     }, false);
-    var sessionID = Cookies.get('sessionID'),
+    var sessionID = window.localStorage.getItem('sessionID'),
         outputhtml;
     
-    $.post('ajax/checklogin.php', {sessionID: sessionID}, function (data) {
+    $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/checklogin.php', {sessionID: sessionID}, function (data) {
         var retdata = data.split(';');
         if (retdata[0] === "1") {
             if (retdata[2] === "staff") { //If logged in user is staff rank load this
@@ -82,7 +82,7 @@ function checklogin() {
 
 function deletecookie() {
     "use strict";
-    Cookies.remove('sessionID');
+    window.localStorage.setItem('sessionID', '0');
     location.reload();
 }
 
@@ -93,9 +93,10 @@ function login() {
         found;
 
     if (($.trim(username) !== '') && ($.trim(password) !== '')) {
-        $.post('ajax/login.php', {username: username, password: password}, function (data) {
-            found = data;
-            if (found === "1") { // Only reload on valid credentials
+        $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/login.php', {username: username, password: password}, function (data) {
+            var retdata = data.split(';');
+            if (retdata[0] === "1") { // Only reload on valid credentials
+                window.localStorage.setItem('sessionID', retdata[1]);
                 location.reload();
             }
         });
@@ -114,7 +115,7 @@ function edituserdetails() {
         contactnumber,
         address,
         email,
-        sessionID = Cookies.get('sessionID');
+        sessionID = window.localStorage.getItem('sessionID');
     
     $('section#mainCont').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
@@ -127,10 +128,10 @@ function edituserdetails() {
         address = $('input#address').val();
         email = $('input#email').val();
         
-        $.post('ajax/checkpassword.php', {sessionID: sessionID}, function (data) {
+        $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/checkpassword.php', {sessionID: sessionID}, function (data) {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
-                $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
+                $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
                     location.reload();
                 });
             }
@@ -164,7 +165,7 @@ function addproducts() {
         image = $('input#image').val();
         tags = $('input#tags').val();
         
-        $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
+        $.post('http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
             location.reload();
         });
     });
@@ -172,17 +173,17 @@ function addproducts() {
 
 function addtocart(productID) {
     "use strict";
-    var currentcart = Cookies.get('cart');
+    var currentcart = window.localStorage.getItem('cart');
     if (!currentcart) {
         currentcart = "";
     }
     currentcart = currentcart.concat(productID, "*");
-    Cookies.set('cart', currentcart);
+    window.localStorage.setItem('cart', currentcart);
 }
 
 function clearcart() {
     "use strict";
-    Cookies.set('cart', '');
+    window.localStorage.setItem('cart', '');
     location.reload();
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;

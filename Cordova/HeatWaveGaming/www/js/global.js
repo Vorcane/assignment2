@@ -6,7 +6,7 @@
 //    Cookies.set('lastsearch', search); //Sets the last search cookie
 //	
 //	if ($.trim(search) !== "") {
-//		$.post("ajax/product.php", {search: search}, function (data) {
+//		$.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/product.php", {search: search}, function (data) {
 //			$("div#search-data").html(data);
 //		});
 //	}
@@ -24,7 +24,7 @@ $("a#fps").on("click", function () {
 	var search = $("a#fps").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("/http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -36,7 +36,7 @@ $("a#mmo").on("click", function () {
     var search = $("a#mmo").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -48,7 +48,7 @@ $("a#racing").on("click", function () {
     var search = $("a#racing").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -60,7 +60,7 @@ $("a#adventure").on("click", function () {
     var search = $("a#adventure").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -72,7 +72,7 @@ $("a#sandbox").on("click", function () {
     var search = $("a#sandbox").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -84,7 +84,7 @@ $("a#sports").on("click", function () {
     var search = $("a#sports").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -96,7 +96,7 @@ $("a#action").on("click", function () {
     var search = $("a#action").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -108,7 +108,7 @@ $("a#rts").on("click", function () {
     var search = $("a#rts").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -120,7 +120,7 @@ $("a#fighter").on("click", function () {
     var search = $("a#fighter").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -132,7 +132,7 @@ $("a#rpg").on("click", function () {
     var search = $("a#rpg").text();
 
     if ($.trim(search) !== "") {
-        $.post("ajax/genre.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/genre.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -150,7 +150,7 @@ $("a#utwent").on("click", function () {
     var search = parseFloat("20");
 
     if ($.trim(search) !== "") {
-        $.post("ajax/price.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/price.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -162,7 +162,7 @@ $("a#ufifty").on("click", function () {
     var search = parseFloat("50");
 
     if ($.trim(search) !== "") {
-        $.post("ajax/price.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/price.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -174,7 +174,7 @@ $("a#ofifty").on("click", function () {
     var search = parseFloat("52");
 
     if ($.trim(search) !== "") {
-        $.post("ajax/price.php", {search: search}, function (data) {
+        $.post("http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/price.php", {search: search}, function (data) {
             $("div#search-data").html(data);
         });
     }
@@ -188,7 +188,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: 'ajax/aboutus.php',
+            url: 'http://ceto.murdoch.edu.au/~32667253/assignment2/Cordova/HeatWaveGaming/www/ajax/aboutus.php',
             success: function (data) {
                 $("div#search-data").html(data);
             }
