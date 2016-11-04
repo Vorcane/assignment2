@@ -64,7 +64,7 @@ function checklogin() {
         }
     });
     loadcart(); // Loads the cart on page load
-    //searchbar(); // Loads the search bar on page load
+    searchbar(); // Loads the search bar on page load
     displayproducts(); //Loads the products on page load
 }
 
