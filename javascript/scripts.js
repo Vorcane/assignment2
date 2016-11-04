@@ -17,24 +17,24 @@ function loadcart() {
 }
 
 function searchbar() {
-//    "use strict";
-//    var lastsearch = Cookies.get('lastsearch');
-//    if (!lastsearch) {
-//        lastsearch = "Enter product name";
-//    }
-//    $("input#search").attr("placeholder", lastsearch);
-//    
-//    $("input#search-submit").on("click", function () {
-//        var search = $("input#search").val();
-//        Cookies.set('lastsearch', search);
-//        
-//        if ($.trim(search)) {
-//            $.post("ajax/product.php", {search: search}, function (data) {
-//                $("div#search-data").html(data);
-//            });
-//        }
-//        return false;
-//    });
+    "use strict";
+    var lastsearch = Cookies.get('lastsearch');
+    if (!lastsearch) {
+        lastsearch = "Enter product name";
+    }
+    $("input#search").attr("placeholder", lastsearch);
+    
+    $("input#search-submit").on("click", function () {
+        var search = $("input#search").val();
+        Cookies.set('lastsearch', search);
+        
+        if ($.trim(search)) {
+            $.post("ajax/product.php", {search: search}, function (data) {
+                $("div#search-data").html(data);
+            });
+        }
+        return false;
+    });
 }
 
 function displayproducts() {
@@ -71,7 +71,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    //location.reload();
+    location.reload(true);
 }
 
 function login() {
@@ -84,7 +84,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
             if (found === "1") { // Only reload on valid credentials
-                location.reload();
+                location.reload(true);
             }
         });
     }
@@ -119,7 +119,7 @@ function edituserdetails() {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                    location.reload();
+                    location.reload(true);
                 });
             }
         });
@@ -153,7 +153,7 @@ function addproducts() {
         tags = $('input#tags').val();
         
         $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
-            location.reload();
+            location.reload(true);
         });
     });
 }
@@ -171,7 +171,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    //location.reload();
+    location.reload(true);
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }
