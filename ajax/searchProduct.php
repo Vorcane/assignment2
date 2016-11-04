@@ -36,12 +36,13 @@
 			
 			# Displaying what the query retrieved
 			while ($row = mysql_fetch_Array($result)) {
+                $productID = $row["productID"];
 				print "<div class='prodContainer'>"; # Starting the container
 				print "<p>" . $row["name"] . "</p>";
 				print "<p>$" . $row["price"] . "</p>";
 				print "<p>" . $row["description"] . "</p>";
 				print "<p>" . $row["rating"] . "</p>";
-				print "<form name='addButton' action='' method='POST'><input type='submit' name='addToC' value='Add to Cart'></input></form>";
+				print "<form name='addButton' action='addtocart($productID)' method='POST'><input type='submit' name='addToC' value='Add to Cart'></input></form>";
 				print "</div>"; # Ending the container
 			}
 			# Closing connection
