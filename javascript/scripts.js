@@ -83,7 +83,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    location.reload();
+    location.reload(true);
 }
 
 function login() {
@@ -96,7 +96,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
             if (found === "1") { // Only reload on valid credentials
-                location.reload();
+                location.reload(true);
             }
         });
     }
