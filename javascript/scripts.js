@@ -71,7 +71,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    location.reload();
+    //location.reload();
 }
 
 function login() {
