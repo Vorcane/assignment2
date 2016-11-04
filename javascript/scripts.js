@@ -171,7 +171,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    location.reload();
+    //location.reload();
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }
