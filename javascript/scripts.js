@@ -11,7 +11,6 @@ function loadcart() {
         splitcart.forEach(function (productID) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
                 $('div#cart').append('<li><a href="#">' + data + "</a></li>");
-                location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
             });
         });
     }
@@ -24,7 +23,6 @@ function searchproduct() {
     if ($.trim(search)) {
         $.post("ajax/product.php", {search: search}, function (data) {
             $("div#search-data").html(data);
-            location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
         });
     }
     return false;
@@ -37,18 +35,6 @@ function searchbar() {
         lastsearch = "Enter product name";
     }
     $("input#search").attr("placeholder", lastsearch);
-    
-//    $("input#search-submit").on("click", function () {
-//        var search = $("input#search").val();
-//        Cookies.set('lastsearch', search);
-//        
-//        if ($.trim(search)) {
-//            $.post("ajax/product.php", {search: search}, function (data) {
-//                $("div#search-data").html(data);
-//            });
-//        }
-//        return true;
-//    });
 }
 
 function displayproducts() {
@@ -57,7 +43,6 @@ function displayproducts() {
         if (status === "success") {
             $('div#search-data').html(data);
         }
-        location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
     });
 }
 
@@ -77,7 +62,6 @@ function checklogin() {
             }
             $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
-        location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
     });
     loadcart(); // Loads the cart on page load
     searchbar(); // Loads the search bar on page load
@@ -87,7 +71,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    location.reload();
+    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
 }
 
 function login() {
@@ -100,7 +84,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
             if (found === "1") { // Only reload on valid credentials
-                location.reload();
+                location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
             }
         });
     }
@@ -135,10 +119,9 @@ function edituserdetails() {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                    location.reload(true);
+                    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
                 });
             }
-            location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
         });
     });
 }
