@@ -83,7 +83,7 @@ function checklogin() {
 function deletecookie() {
     "use strict";
     Cookies.remove('sessionID');
-    location.reload(true);
+    window.location = window.location;
 }
 
 function login() {
@@ -96,7 +96,7 @@ function login() {
         $.post('ajax/login.php', {username: username, password: password}, function (data) {
             found = data;
             if (found === "1") { // Only reload on valid credentials
-                location.reload(true);
+                window.location=window.location;
             }
         });
     }
@@ -131,7 +131,7 @@ function edituserdetails() {
             var retdata = data.split(';');
             if (retdata[0] === "1" && retdata[1] === oldpassword) {
                 $.post('ajax/updateuserdetails.php', {username: username, password: newpassword, name: name, contactnumber: contactnumber, address: address, email: email, sessionID: sessionID}, function (data) {
-                    location.reload(true);
+                    window.location=window.location;
                 });
             }
         });
@@ -165,7 +165,7 @@ function addproducts() {
         tags = $('input#tags').val();
         
         $.post('ajax/addproduct.php', {name: name, price: price, description: description, genre: genre, quantity: quantity, rating: rating, image: image, tags: tags}, function (data) {
-            location.reload(true);
+            window.location=window.location;
         });
     });
 }
@@ -183,7 +183,7 @@ function addtocart(productID) {
 function clearcart() {
     "use strict";
     Cookies.set('cart', '');
-    location.reload(true);
+    window.location=window.location;
 //    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
 //    $('div#cart').html = outputhtml;
 }
