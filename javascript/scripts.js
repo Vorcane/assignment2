@@ -47,25 +47,25 @@ function displayproducts() {
 }
 
 function checklogin() {
-//    "use strict";
-//    var sessionID = Cookies.get('sessionID'),
-//        outputhtml;
-//    
-//    $.post('ajax/checklogin.php', {sessionID: sessionID}, function (data) {
-//        var retdata = data.split(';');
-//        if (retdata[0] === "1") {
-//            if (retdata[2] === "staff") { //If logged in user is staff rank load this
-//                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='addproducts()' type='button'>Add Products</button>";
-//            }
-//            if (retdata[2] === "user") { //If logged in user is user rank load this
-//                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button>";
-//            }
-//            $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
-//        }
-//    });
-//    loadcart(); // Loads the cart on page load
-//    searchbar(); // Loads the search bar on page load
-//    displayproducts(); //Loads the products on page load
+    "use strict";
+    var sessionID = Cookies.get('sessionID'),
+        outputhtml;
+    
+    $.post('ajax/checklogin.php', {sessionID: sessionID}, function (data) {
+        var retdata = data.split(';');
+        if (retdata[0] === "1") {
+            if (retdata[2] === "staff") { //If logged in user is staff rank load this
+                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='addproducts()' type='button'>Add Products</button>";
+            }
+            if (retdata[2] === "user") { //If logged in user is user rank load this
+                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button>";
+            }
+            $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
+        }
+    });
+    loadcart(); // Loads the cart on page load
+    //searchbar(); // Loads the search bar on page load
+    displayproducts(); //Loads the products on page load
 }
 
 function deletecookie() {
