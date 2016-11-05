@@ -206,7 +206,7 @@ function register() {
                         location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
                     });
                 } else {
-                    $('textarea#passwordtext').text("Username already taken");
+                    $('textarea#passwordtext').text("Username already taken " + data);
                 }
             });
         } else {
