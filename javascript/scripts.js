@@ -55,7 +55,7 @@ function checklogin() {
         var retdata = data.split(';');
         if (retdata[0] === "1") {
             if (retdata[2] === "staff") { //If logged in user is staff rank load this
-                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='addproducts()' type='button'>Add Products</button> <button onclick='addstaff()' type='button'>";
+                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='addproducts()' type='button'>Add Products</button> <button onclick='addstaff()' type='button'>Add new staff account</button>";
             }
             if (retdata[2] === "user") { //If logged in user is user rank load this
                 outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button>";
@@ -129,7 +129,7 @@ function edituserdetails() {
 function addproducts() {
     "use strict";
     //document.write("I get into the function"); Gets here
-    var outputhtml = '<div class="center">Name: <input type="text" id="name"> Price: <input type="text" id="price"> Description: <input type="text" id="description"> Genre: <input type="text" id="genre"> Quantity: <input type="text" id="quantity"> Rating: <input type="text" id="rating"> Image: <input type="text" id="image"> Tags: <input type="text" id="tags"> <button type="button" id="addproductsbutton">Submit details</button></div> ',
+    var outputhtml = '<div class="center"><br><br>Name: <input type="text" id="name"><br><br> Price: <input type="text" id="price"><br><br> Description: <input type="text" id="description"><br><br> Genre: <input type="text" id="genre"><br><br> Quantity: <input type="text" id="quantity"><br><br> Rating: <input type="text" id="rating"><br><br> Image: <input type="text" id="image"><br><br> Tags: <input type="text" id="tags"><br><br> <button type="button" id="addproductsbutton">Submit details</button></div> ',
         editarray,
         name,
         price,
@@ -218,7 +218,7 @@ function register() {
 
 function addstaff() {
     "use strict";
-    var outputhtml = '<div class="center">Username: <input type="text" id="regusername"><br><br> Password: <input type="password" id="regpassword"><br><br> Confirm password: <input type="password" id="confirmedpassword"><br><br> Name: <input type="text" id="name"><br><br> Contact Number: <input type="text" id="contactnumber"><br><br> Address: <input type="text" id="address"><br><br> Email: <input type="text" id="email"><br><br> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"></div> ',
+    var outputhtml = '<div class="center">Username: <input type="text" id="regusername"><br><br> Password: <input type="password" id="regpassword"><br><br> Confirm password: <input type="password" id="confirmedpassword"><br><br> Name: <input type="text" id="name"><br><br> Contact Number: <input type="text" id="contactnumber"><br><br> Address: <input type="text" id="address"><br><br> Email: <input type="text" id="email"><br><br> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"></textarea></div> ',
         editarray,
         username,
         password,
