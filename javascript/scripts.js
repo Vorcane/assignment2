@@ -179,7 +179,7 @@ function clearcart() {
 
 function register() {
     "use strict";
-    var outputhtml = 'Username: <input type="text" id="username"> Password: <input type="password" id="password"> Confirm password: <input type="password" id="confirmedpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"> ',
+    var outputhtml = 'Username: <input type="text" id="regusername"> Password: <input type="password" id="regpassword"> Confirm password: <input type="password" id="confirmedpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"> ',
         editarray,
         username,
         password,
@@ -192,8 +192,8 @@ function register() {
     $('section#mainCont').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
-        username = $('input#username').val();
-        password = $('input#password').val();
+        username = $('input#regusername').val();
+        password = $('input#regpassword').val();
         confirmedpassword = $('input#confirmedpassword').val();
         name = $('input#name').val();
         contactnumber = $('input#contactnumber').val();
