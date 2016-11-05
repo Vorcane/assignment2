@@ -93,7 +93,7 @@ function login() {
 function edituserdetails() {
     "use strict";
     //document.write("I get into the function"); Gets here
-    var outputhtml = '<div class="center">Username: <input type="text" id="username"> Old password: <input type="password" id="oldpassword"> New password: <input type="password" id="newpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton">Submit details</button></div> ',
+    var outputhtml = '<div class="center">Username: <input type="text" id="username"><br><br> Old password: <input type="password" id="oldpassword"><br><br> New password: <input type="password" id="newpassword"><br><br> Name: <input type="text" id="name"><br><br> Contact Number: <input type="text" id="contactnumber"><br><br> Address: <input type="text" id="address"><br><br> Email: <input type="text" id="email"><br><br> <button type="button" id="edituserbutton">Submit details</button></div> ',
         editarray,
         username,
         oldpassword,
@@ -179,7 +179,7 @@ function clearcart() {
 
 function register() {
     "use strict";
-    var outputhtml = '<div class="center">Username: <input type="text" id="regusername"> Password: <input type="password" id="regpassword"> Confirm password: <input type="password" id="confirmedpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"></div> ',
+    var outputhtml = '<div class="center">Username: <input type="text" id="regusername"><br><br> Password: <input type="password" id="regpassword"><br><br> Confirm password: <input type="password" id="confirmedpassword"><br><br> Name: <input type="text" id="name"><br><br> Contact Number: <input type="text" id="contactnumber"><br><br> Address: <input type="text" id="address"><br><br> Email: <input type="text" id="email"><br><br> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"></div> ',
         editarray,
         username,
         password,
@@ -218,7 +218,7 @@ function register() {
 
 function addstaff() {
     "use strict";
-    var outputhtml = '<div class="center">Username: <input type="text" id="regusername"> Password: <input type="password" id="regpassword"> Confirm password: <input type="password" id="confirmedpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"></div> ',
+    var outputhtml = '<div class="center">Username: <input type="text" id="regusername"><br><br> Password: <input type="password" id="regpassword"><br><br> Confirm password: <input type="password" id="confirmedpassword"><br><br> Name: <input type="text" id="name"><br><br> Contact Number: <input type="text" id="contactnumber"><br><br> Address: <input type="text" id="address"><br><br> Email: <input type="text" id="email"><br><br> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"></div> ',
         editarray,
         username,
         password,
