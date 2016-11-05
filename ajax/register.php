@@ -8,8 +8,9 @@
     $contactnumber = trim($_POST["contactnumber"]);
     $address = trim($_POST["address"]);
     $email = trim($_POST["email"]);
+    $rank = trim($_POST["rank"]);
 
-    $insertquery = "INSERT INTO users (userName, password, name, contactNumber, address, email, rank) VALUES ('$username', '$password', '$name', '$contactnumber', '$address', '$email', 'user');";
+    $insertquery = "INSERT INTO users (userName, password, name, contactNumber, address, email, rank) VALUES ('$username', '$password', '$name', '$contactnumber', '$address', '$email', '$rank');";
 
     $queryresult = mysql_query($insertquery);
 
