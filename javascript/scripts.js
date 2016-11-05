@@ -177,3 +177,41 @@ function clearcart() {
 //    $('div#cart').html = outputhtml;
 }
 
+function register() {
+    "use strict";
+    var outputhtml = 'Username: <input type="text" id="username"> Password: <input type="password" id="password"> Confirm password: <input type="password" id="confirmedpassword"> Name: <input type="text" id="name"> Contact Number: <input type="text" id="contactnumber"> Address: <input type="text" id="address"> Email: <input type="text" id="email"> <button type="button" id="edituserbutton">Submit details</button> <textarea rows="1" cols="20" id="passwordtext"> ',
+        editarray,
+        username,
+        password,
+        confirmedpassword,
+        name,
+        contactnumber,
+        address,
+        email;
+    
+    $('section#mainCont').html(outputhtml);
+    //document.write("I should have outputted the html"); Gets here
+    $('button#edituserbutton').on("click", function () {
+        username = $('input#username').val();
+        password = $('input#password').val();
+        confirmedpassword = $('input#confirmedpassword').val();
+        name = $('input#name').val();
+        contactnumber = $('input#contactnumber').val();
+        address = $('input#address').val();
+        email = $('input#email').val();
+        if (password === confirmedpassword) { //Makes sure passwords match up
+            $.post('ajax/checkuser.php', {username: username}, function (data) {
+                if (data === "0") { //Checks if username is already taken
+                    $.post('ajax/register.php', {username: username, password: password, name: name, contactnumber: contactnumber, address: address, email: email}, function (data) {
+                        location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
+                    });
+                } else {
+                    $('textarea#passwordtext').text("Username already taken");
+                }
+            });
+        } else {
+            $('textarea#passwordtext').text("Passwords do not match");
+        }
+    });
+}
+
