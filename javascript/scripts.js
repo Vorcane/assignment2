@@ -273,7 +273,7 @@ function submitorder() {
                 $('section#mainCont').append(data + "<br><br>");
             });
         });
-        $('section#mainCont').append("<button type='button' id='submitbutton' class = 'center'>Submit Order</button>");
+        $('section#mainCont').append("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button>");
         $('section#mainCont').append("</div>");
         $('button#submitbutton').on('click', function () {
             $.post('ajax/submitorder.php', {sessionID: sessionid, cart: currentcart}, function (data) {
