@@ -18,7 +18,7 @@
 // CODE FOR SEARCHING GENRE BELOW
 // CODE FOR SEARCHING GENRE BELOW
 
-	//Function to update page to only show FPS genre
+//Function to update page to only show FPS genre
 $("a#fps").on("click", function () {
     'use strict';
 	var search = $("a#fps").text();
