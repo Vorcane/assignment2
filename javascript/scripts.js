@@ -63,9 +63,10 @@ function checklogin() {
             $('div#login-replace').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
     });
+    displayproducts(); //Loads the products on page load
     loadcart(); // Loads the cart on page load
     searchbar(); // Loads the search bar on page load
-    displayproducts(); //Loads the products on page load
+    
 }
 
 function deletecookie() {
@@ -143,7 +144,6 @@ function addproducts() {
         tags;
     
     $('section#mainCont').html(outputhtml);
-    //document.write("I should have outputted the html"); Gets here
     $('button#addproductsbutton').on("click", function () {
         name = $('input#name').val();
         price = $('input#price').val();
@@ -175,8 +175,6 @@ function clearcart() {
     "use strict";
     Cookies.set('cart', '');
     location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
-//    var outputhtml = '<li><a href="#" onclick="clearcart()">Clear cart</a></li>';
-//    $('div#cart').html = outputhtml;
 }
 
 function register() {
