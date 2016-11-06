@@ -274,7 +274,7 @@ function edituserdetails() {
         email,
         sessionID = Cookies.get('sessionID');
     dobuttons();
-    $('section#mainCont').html(outputhtml);
+    $('div#search-data').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
         username = $('input#username').val();
@@ -311,7 +311,7 @@ function addproducts() {
         tags;
     
     dobuttons();
-    $('section#mainCont').html(outputhtml);
+    $('div#search-data').html(outputhtml);
     $('button#addproductsbutton').on("click", function () {
         name = $('input#name').val();
         price = $('input#price').val();
@@ -358,7 +358,7 @@ function register() {
         email,
         rank = "user";
     
-    $('section#mainCont').html(outputhtml);
+    $('div#search-data').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
         username = $('input#regusername').val();
@@ -398,7 +398,7 @@ function addstaff() {
         rank = "staff";
     
     dobuttons();
-    $('section#mainCont').html(outputhtml);
+    $('div#search-data').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
         username = $('input#regusername').val();
@@ -434,7 +434,7 @@ function submitorder() {
         testdata,
         outputhtml;
     if (currentcart) {
-        $('section#mainCont').html("<div><div class = 'center'> <p>You have chosen the following products: <div id='productshere'></div><br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br></div>");
+        $('div#search-data').html("<div><div class = 'center'> <p>You have chosen the following products: <div id='productshere'></div><br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br></div>");
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
@@ -442,7 +442,7 @@ function submitorder() {
 
             });
         });
-        $('section#mainCont').html(outputhtml);
+        $('div#search-data').html(outputhtml);
         $('button#submitbutton').on('click', function () {
             $.post('ajax/submitorder.php', {sessionID: sessionid, cart: currentcart}, function (data) {
                 testdata = data;
@@ -457,6 +457,6 @@ function submitorder() {
         });
         
     } else {
-        $('section#mainCont').html("<div class='center'> <h2>You did not add any items to the cart, please go home and choose some products.</h2><br><h2>Thank you for shopping with HeatWave Gaming</h2></div>");
+        $('div#search-data').html("<div class='center'> <h2>You did not add any items to the cart, please go home and choose some products.</h2><br><h2>Thank you for shopping with HeatWave Gaming</h2></div>");
     }
 }
