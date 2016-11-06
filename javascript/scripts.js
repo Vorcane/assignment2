@@ -274,10 +274,9 @@ function submitorder() {
                 $('div#login-data').append("cart " + i);
             });
         });
-        $('div#login-data').append(products[0] + "and" + products[1]);
+        //$('div#login-data').append(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         products.forEach(function (product, i) {
-            $('div#login-data').append(products[i]);
             $('div#login-data').append("products " + i);
             //$('div#login-data').text(product);
         });
