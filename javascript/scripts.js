@@ -276,9 +276,8 @@ function submitorder() {
         });
         
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
-        products.forEach(function (product) {
-            $('div#login-replace').html(product);
-            $('section#mainCont').append(product);
+        products.forEach(function (product, i) {
+            $('section#mainCont').append(products[i]);
             $('div#login-data').text(product);
         });
         $('section#mainCont').append("<button type='button' id='submitbutton'>Submit Order</button>");
