@@ -275,7 +275,7 @@ function submitorder() {
 //                $('div#login-data').append(" Product " + products[i] + "<br>");
             });
             $('section#mainCont').append("I tryed to put p1 here " + products[0] + "<br>");
-            document.write("HEL:LO");
+            //document.write("HEL:LO");
         });
 //        $('section#mainCont').append(products[0] + "<br>");
 //        $('section#mainCont').append(products[1] + "<br>");
@@ -286,8 +286,8 @@ function submitorder() {
             //$('div#login-data').append(" products " + i + "<br>");
             //$('div#login-data').text(product);
         });
-        $('section#mainCont').append("I tryed to put p1 here " + products[0] + "<br>");
-        $('section#mainCont').append("I tried to put p2 here " + products[1] + "<br>");
+//        $('section#mainCont').append("I tryed to put p1 here " + products[0] + "<br>");
+//        $('section#mainCont').append("I tried to put p2 here " + products[1] + "<br>");
         $('section#mainCont').append("<button type='button' id='submitbutton'>Submit Order</button>");
         $('section#mainCont').append("</div>");
         $('button#submitbutton').on('click', function () {
