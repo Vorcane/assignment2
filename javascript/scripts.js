@@ -276,6 +276,7 @@ function submitorder() {
         });
         //$('div#login-data').append(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
+        $('div#login-data').append("Length of products " + products.length);
         products.forEach(function (product, i) {
             $('div#login-data').append("products " + i);
             //$('div#login-data').text(product);
