@@ -262,13 +262,15 @@ function submitorder() {
     var currentcart = Cookies.get('cart'),
         splitcart,
         products = [""],
-        sessionid = Cookies.get('sessionID');
+        sessionid = Cookies.get('sessionID'),
+        tProduct;
     if (currentcart) {
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
-                products[i] = data + "<br>";
+                tProduct = data;
             });
+            products[i] = tProduct + "<br>";
         });
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         products.forEach(function (product) {
