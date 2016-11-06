@@ -267,16 +267,17 @@ function submitorder() {
         testdata,
         outputhtml;
     if (currentcart) {
-        outputhtml = "<div><div class = 'center'> <p>You have chosen the following products: ";
-        //$('section#mainCont').html("<div><div class = 'center'> <p>You have chosen the following products: ");
+        //outputhtml = "<div><div class = 'center'> <p>You have chosen the following products: ";
+        $('section#mainCont').html("<div><div class = 'center'> <p>You have chosen the following products: <div id='productshere'></div><br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br></div>");
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
-                outputhtml = outputhtml.concat(data, "<br><br>");
-                //$('section#mainCont').append(data + "<br><br>");
+                //outputhtml = outputhtml.concat(data, "<br><br>");
+                $('div#productshere').append(data + "<br><br>");
+
             });
         });
-        outputhtml = outputhtml.concat("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br></div>");
+        //outputhtml = outputhtml.concat("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br></div>");
         //$('section#mainCont').append("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br>");
         $('section#mainCont').html(outputhtml);
         $('button#submitbutton').on('click', function () {
