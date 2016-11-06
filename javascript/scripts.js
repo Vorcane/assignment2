@@ -274,7 +274,7 @@ function submitorder() {
 //                $('div#login-data').append(" cart " + i + "<br>");
 //                $('div#login-data').append(" Product " + products[i] + "<br>");
             });
-            $('section#mainCont').append("I tryed to put p1 here " + products[0] + "<br>");
+            $('section#mainCont').html("I tryed to put p1 here " + products[0] + "<br>");
             //document.write("HEL:LO");
         });
 //        $('section#mainCont').append(products[0] + "<br>");
