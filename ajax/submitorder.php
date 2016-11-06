@@ -4,7 +4,6 @@
     $sessionID = $_POST['sessionID'];
     $cart = $_POST['cart'];
     $query = mysql_query("SELECT * FROM users WHERE sessionID = '$sessionID';");
-    echo "$query";
     if (mysql_num_rows($query) > 0) {
         while ($row = mysql_fetch_array($query)) {
             $badcoding = $row['userID'];

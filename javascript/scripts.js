@@ -278,6 +278,7 @@ function submitorder() {
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         products.forEach(function (product) {
             $('section#mainCont').append(product);
+            $('div#login-data').text(product);
         });
         $('section#mainCont').append("<button type='button' id='submitbutton'>Submit Order</button>");
         $('section#mainCont').append("</div>");
