@@ -272,7 +272,7 @@ function submitorder() {
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
-                outputhtml = outputhtml.concat(data + "<br><br>");
+                outputhtml = outputhtml.concat(data, "<br><br>");
                 //$('section#mainCont').append(data + "<br><br>");
             });
         });
