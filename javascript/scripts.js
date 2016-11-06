@@ -275,10 +275,9 @@ function submitorder() {
         });
         $('div#login-data').html(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
-        //$('div#login-form').html(products.length);
         products.forEach(function (product, i) {
             $('section#mainCont').append(products[i]);
-            $('div#login-data').text(product);
+            //$('div#login-data').text(product);
         });
         $('section#mainCont').append("<button type='button' id='submitbutton'>Submit Order</button>");
         $('section#mainCont').append("</div>");
