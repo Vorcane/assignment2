@@ -266,8 +266,7 @@ function submitorder() {
         tProduct,
         testdata;
     if (currentcart) {
-        $('section#mainCont').html("<div class = 'center'> <p>You have chosen the following products: ");
-        $('section#mainCont').append("</div>");
+        $('section#mainCont').html("<div><div class = 'center'> <p>You have chosen the following products: ");
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
@@ -275,7 +274,7 @@ function submitorder() {
             });
         });
         $('section#mainCont').append("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br>");
-        //$('section#mainCont').append("</div>");
+        $('section#mainCont').append("</div></div>");
         $('button#submitbutton').on('click', function () {
             $.post('ajax/submitorder.php', {sessionID: sessionid, cart: currentcart}, function (data) {
                 testdata = data;
