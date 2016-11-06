@@ -276,6 +276,7 @@ function submitorder() {
         });
         
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
+        $('div#login-form').html(products.length());
         products.forEach(function (product, i) {
             $('section#mainCont').append(products[i]);
             $('div#login-data').text(product);
