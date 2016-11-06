@@ -270,7 +270,7 @@ function submitorder() {
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
-                $('div#login-data').append(data + "<br>");
+                $('section#mainCont').append(data + "<br>");
             });
         });
         $('section#mainCont').append("<button type='button' id='submitbutton' class='center'>Submit Order</button>");
