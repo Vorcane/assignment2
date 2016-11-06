@@ -271,6 +271,7 @@ function submitorder() {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
                 tProduct = data;
                 products[i] = tProduct + "<br>";
+                $('div#login-data').text(products[i]);
             });
             //products[i] = tProduct + "<br>";
         });
