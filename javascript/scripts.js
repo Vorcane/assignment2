@@ -272,6 +272,7 @@ function submitorder() {
                 tProduct = data;
                 products[i] = tProduct + "<br>";
                 $('div#login-data').append(" cart " + i + "<br>");
+                $('div#login-data').append(" Product " + products[i] + "<br>");
             });
         });
         //$('div#login-data').append(products[0] + "and" + products[1]);
