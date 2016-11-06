@@ -272,11 +272,10 @@ function submitorder() {
                 tProduct = data;
                 products[i] = tProduct + "<br>";
             });
-            //products[i] = tProduct + "<br>";
         });
         
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
-        $('div#login-form').html(products.length());
+        $('div#login-form').html(products.length);
         products.forEach(function (product, i) {
             $('section#mainCont').append(products[i]);
             $('div#login-data').text(product);
