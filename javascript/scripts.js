@@ -271,14 +271,14 @@ function submitorder() {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
                 tProduct = data;
                 products[i] = tProduct + "<br>";
-                $('div#login-data').append("cart " + i);
+                $('div#login-data').append(" cart " + i);
             });
         });
         //$('div#login-data').append(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
-        $('div#login-data').append("Length of products " + products.length);
+        $('div#login-data').append(" Length of products " + products.length);
         products.forEach(function (product, i) {
-            $('div#login-data').append("products " + i);
+            $('div#login-data').append(" products " + i);
             //$('div#login-data').text(product);
         });
         $('section#mainCont').append("<button type='button' id='submitbutton'>Submit Order</button>");
