@@ -275,6 +275,8 @@ function submitorder() {
                 $('div#login-data').append(" Product " + products[i] + "<br>");
             });
         });
+        $('section#mainCont').append(products[0] + "<br>");
+        $('section#mainCont').append(products[1] + "<br>");
         //$('div#login-data').append(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         $('div#login-data').append(" Length of products " + products.length + "<br>");
