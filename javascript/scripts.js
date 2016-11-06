@@ -4,8 +4,9 @@
 
 function loadcart() {
     "use strict";
-    var currentcart = Cookies.get('cart').slice(0, -1),
+    var currentcart = Cookies.get('cart'),
         splitcart;
+    currentcart.slice(0, -1);
     if (currentcart) {
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID) {
