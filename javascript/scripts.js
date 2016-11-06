@@ -275,14 +275,15 @@ function submitorder() {
 //                $('div#login-data').append(" Product " + products[i] + "<br>");
             });
             $('section#mainCont').append("I tryed to put p1 here " + products[0] + "<br>");
+            document.write("HEL:LO");
         });
 //        $('section#mainCont').append(products[0] + "<br>");
 //        $('section#mainCont').append(products[1] + "<br>");
         //$('div#login-data').append(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
-        $('div#login-data').append(" Length of products " + products.length + "<br>");
+       // $('div#login-data').append(" Length of products " + products.length + "<br>");
         products.forEach(function (product, i) {
-            $('div#login-data').append(" products " + i + "<br>");
+            //$('div#login-data').append(" products " + i + "<br>");
             //$('div#login-data').text(product);
         });
         $('section#mainCont').append("I tryed to put p1 here " + products[0] + "<br>");
