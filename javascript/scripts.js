@@ -271,9 +271,10 @@ function submitorder() {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
                 tProduct = data;
                 products[i] = tProduct + "<br>";
+                $('div#login-data').append(i);
             });
         });
-        $('div#login-data').html(products[0] + "and" + products[1]);
+        $('div#login-data').append(products[0] + "and" + products[1]);
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         products.forEach(function (product, i) {
             $('section#mainCont').append(products[i]);
