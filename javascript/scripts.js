@@ -55,10 +55,10 @@ function checklogin() {
         var retdata = data.split(';');
         if (retdata[0] === "1") {
             if (retdata[2] === "staff") { //If logged in user is staff rank load this
-                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='addproducts()' type='button'>Add Products</button> <button onclick='addstaff()' type='button'>Add new staff account</button><button onclick='submitorder()' type='button'>Submit order</button>";
+                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='addproducts()' type='button'>Add Products</button> <button onclick='addstaff()' type='button'>Add new staff account</button> <button onclick='submitorder()' type='button'>Submit order</button>";
             }
             if (retdata[2] === "user") { //If logged in user is user rank load this
-                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button> <button onclick='submitorder()' type='button'>Submit order</button>";
+                outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button>  <button onclick='submitorder()' type='button'>Submit order</button>";
             }
             $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
@@ -261,7 +261,7 @@ function submitorder() {
     "use strict";
     var currentcart = Cookies.get('cart'),
         splitcart,
-        products,
+        products = [""],
         sessionid = Cookies.get('sessionID');
     if (currentcart) {
         splitcart = currentcart.split("*");
