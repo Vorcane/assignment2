@@ -5,18 +5,18 @@
     $cart = $_POST['cart'];
     $query = mysql_query("SELECT * FROM users WHERE sessionID = '$sessionID';");
     echo "$query";
-//    if ($query > 0) {
-//        while ($row = mysql_fetch_array($query)) {
-//            $badcoding = $row['userID'];
-//            $insertresult = mysql_query("INSERT INTO orders (userID, userOrder) VALUES ('$badcoding', '$cart')");
-//        }
-//        if ($insertresult) {
-//            echo "true";
-//        } else {
-//            echo "false";
-//        }
-//    } else {
-//        echo "false";
-//    }
+    if (mysql_num_rows($query) > 0) {
+        while ($row = mysql_fetch_array($query)) {
+            $badcoding = $row['userID'];
+            $insertresult = mysql_query("INSERT INTO orders (userID, userOrder) VALUES ('$badcoding', '$cart')");
+        }
+        if ($insertresult) {
+            echo "true";
+        } else {
+            echo "false";
+        }
+    } else {
+        echo "false";
+    }
 
 ?>
