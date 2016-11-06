@@ -60,7 +60,7 @@ function checklogin() {
             if (retdata[2] === "user") { //If logged in user is user rank load this
                 outputhtml  = "<h3>Welcome " + retdata[1] + "</h3>" + "<button onclick='deletecookie()' type='button'>Log out</button> <button onclick='edituserdetails()' type='button'>Edit user details</button>  <button onclick='submitorder()' type='button'>Submit order</button>";
             }
-            $('div#login-form').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
+            $('div#login-replace').html(outputhtml); //removes the login forms and replaces it with a greeting message, logout button and link to user account page
         }
     });
     loadcart(); // Loads the cart on page load
