@@ -264,17 +264,21 @@ function submitorder() {
         products = [""],
         sessionid = Cookies.get('sessionID'),
         tProduct,
-        testdata;
+        testdata,
+        outputhtml;
     if (currentcart) {
-        $('section#mainCont').html("<div><div class = 'center'> <p>You have chosen the following products: ");
+        outputhtml = "<div><div class = 'center'> <p>You have chosen the following products: ";
+        //$('section#mainCont').html("<div><div class = 'center'> <p>You have chosen the following products: ");
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
-                $('section#mainCont').append(data + "<br><br>");
+                outputhtml = outputhtml.concat(data + "<br><br>");
+                //$('section#mainCont').append(data + "<br><br>");
             });
         });
-        $('section#mainCont').append("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br>");
-        $('section#mainCont').append("</div></div>");
+        outputhtml = outputhtml.concat("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br></div>");
+        //$('section#mainCont').append("<br><br><button type='button' id='submitbutton' class = 'center'>Submit Order</button><br><br>");
+        $('section#mainCont').html(outputhtml);
         $('button#submitbutton').on('click', function () {
             $.post('ajax/submitorder.php', {sessionID: sessionid, cart: currentcart}, function (data) {
                 testdata = data;
