@@ -263,7 +263,8 @@ function submitorder() {
         splitcart,
         products = [""],
         sessionid = Cookies.get('sessionID'),
-        tProduct;
+        tProduct,
+        testdata;
     if (currentcart) {
         splitcart = currentcart.split("*");
         splitcart.forEach(function (productID, i) {
@@ -273,6 +274,7 @@ function submitorder() {
             });
             //products[i] = tProduct + "<br>";
         });
+        
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         products.forEach(function (product) {
             $('section#mainCont').append(product);
@@ -281,15 +283,17 @@ function submitorder() {
         $('section#mainCont').append("</div>");
         $('button#submitbutton').on('click', function () {
             $.post('ajax/submitorder.php', {sessionID: sessionid, cart: currentcart}, function (data) {
+                testdata = data;
                 if (data === "true") {
-                    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
+                    //location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
                     $('div#login-data').text("Order successfully submitted");
                 } else {
-                    location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
+                    //location.href = "http://ceto.murdoch.edu.au/~32667253/assignment2/index.html";
                     $('div#login-data').text("Order did not submit, please try logging out and in");
                 }
             });
         });
+        
     } else {
         $('section#mainCont').html("<div class='center'> <h2>You did not add any items to the cart, please go home and choose some products.</h2><br><h2>Thank you for shopping with HeatWave Gaming</h2></div>");
     }
