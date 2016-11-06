@@ -273,7 +273,7 @@ function edituserdetails() {
         address,
         email,
         sessionID = Cookies.get('sessionID');
-    
+    dobuttons();
     $('section#mainCont').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
@@ -310,6 +310,7 @@ function addproducts() {
         image,
         tags;
     
+    dobuttons();
     $('section#mainCont').html(outputhtml);
     $('button#addproductsbutton').on("click", function () {
         name = $('input#name').val();
@@ -396,6 +397,7 @@ function addstaff() {
         email,
         rank = "staff";
     
+    dobuttons();
     $('section#mainCont').html(outputhtml);
     //document.write("I should have outputted the html"); Gets here
     $('button#edituserbutton').on("click", function () {
