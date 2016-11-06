@@ -3,7 +3,7 @@
     
     $sessionID = $_POST['sessionID'];
     $cart = $_POST['cart'];
-    $query = "SELECT * FROM USERS WHERE sessionID = '$sessionID';";
+    $query = "SELECT * FROM users WHERE sessionID = '$sessionID';";
     
     if (mysql_query($query) > 0) {
         while ($row = mysql_fetch_array($query)) {
