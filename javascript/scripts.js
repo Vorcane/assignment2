@@ -4,7 +4,7 @@
 
 function loadcart() {
     "use strict";
-    var currentcart = Cookies.get('cart'),
+    var currentcart = Cookies.get('cart').slice(0, -1),
         splitcart;
     if (currentcart) {
         splitcart = currentcart.split("*");
@@ -259,7 +259,7 @@ function addstaff() {
 
 function submitorder() {
     "use strict";
-    var currentcart = Cookies.get('cart'),
+    var currentcart = Cookies.get('cart').slice(0, -1),
         splitcart,
         products = [""],
         sessionid = Cookies.get('sessionID'),
@@ -269,8 +269,9 @@ function submitorder() {
         splitcart.forEach(function (productID, i) {
             $.post('ajax/cart.php', {productID: productID}, function (data) {
                 tProduct = data;
+                products[i] = tProduct + "<br>";
             });
-            products[i] = tProduct + "<br>";
+            //products[i] = tProduct + "<br>";
         });
         $('section#mainCont').html("<div class = 'center'> You have chosen the following products: ");
         products.forEach(function (product) {
